@@ -316,12 +316,12 @@
 <ul>
 <li>SSH to <strong>DC1-WE1, DC1-WE2, DC2-WE1,DC2-WE2</strong> and do <code>show ip route vrf 1</code> and make sure <strong>10.100.100.0/24, 10.200.200/24</strong> as well as <strong>0.0.0.0/0</strong> learned via BGP.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task1_iproute.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task1_iproute.png" width="800"/></p>
 <h4 id="step-12-verify-the-bgp-communities"><strong>Step 1.2</strong> Verify the BGP communities.</h4>
 <ul>
 <li>10.100.100.0/24 should tag with 65010:1000; 10.200.200.0/24 should tag with 65020:2000. Execute <code>show ip bgp vpnv4 vrf 1 &lt;prefix&gt;</code> (10.100.100.0/24 and 10.200.200.0/24) on DC1-WE1,DC1-WE2 and DC2-WE1,DC2-WE2.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task1_bgpcommunity.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task1_bgpcommunity.png" width="800"/></p>
 <h4 id="step-13-set-the-omp-tag-for-dc-specific-routes"><strong>Step 1.3</strong> set the OMP tag for DC specific Routes</h4>
 <ul>
 <li>Login to vManage <strong>https://198.18.133.200:8443</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
@@ -335,11 +335,11 @@
 </ul>
 </li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task1_new_lp_1.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task1_new_lp_1.png" width="800"/></p>
 <ul>
 <li>Click <strong>Action</strong>, change to <strong>Accept</strong>, then select OMP tag, key in <strong>100</strong>, then save Match and Actions.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task1_new_lp_2.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task1_new_lp_2.png" width="800"/></p>
 <ul>
 <li>
 <p>click <strong>Sequence Rule</strong> to create following two rules:</p>
@@ -351,21 +351,21 @@
 </ul>
 <p><span style="background-color:lightblue"> <span style="background-color:lightblue"> <strong>Note: Match Criteria has option "OR","AND" "EXACT". It makes difference when multiple community lists are used in match condition. In this lab, we are only match one community. You can leave it as default OR option.</strong> </span>
 - Click <strong>Default Action</strong> on the left panel, and change default <strong>Reject</strong> action to <strong>Accept</strong></p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab1_1_3_3.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab1_1_3_3.PNG" width="800"/></p>
 <ul>
 <li>Then click on <strong>Save Route Policy</strong></li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task1_new_lp_3.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task1_new_lp_3.png" width="800"/></p>
 <h4 id="step-14-creating-a-local-policy"><strong>Step 1.4</strong> Creating a Local Policy</h4>
 <ul>
 <li>Login to vManage <strong>198.18.133.200</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
 <li>Click on <strong>Localized Policy</strong>, then click on <strong>Add Policy</strong></li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task1_new_lp_4.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task1_new_lp_4.png" width="800"/></p>
 <ul>
 <li>Click on Next to proceed till you see <strong>Configure Route Policy</strong>; click <strong>Add Route Policy</strong> then select <strong>Import Existing Policy</strong>; Select <strong>LAB_DCs_BGP_RP</strong> click import</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task1_new_lp_5.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task1_new_lp_5.png" width="800"/></p>
 <ul>
 <li>Click on Next, Key in the following values:<ul>
 <li>Policy Name: <strong>LAB_DCs_Local_policy</strong></li>
@@ -375,7 +375,7 @@
 </ul>
 </li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task1_new_lp_6.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task1_new_lp_6.png" width="800"/></p>
 <ul>
 <li>
 <p>Attach the local policy to the DC device templates <strong>(Lab_DC1_V01 &amp; Lab_DC2_V01)</strong></p>
@@ -383,7 +383,7 @@
 <li>Access template configuration from <strong>Configuration - Templates</strong></li>
 <li>Under the <strong>Device</strong> template tab, locate template <strong>Lab_DC1_V01</strong> and select <strong>Edit</strong></li>
 <li>Under the <strong>Additional Templates</strong> section, click the dropdown next to <strong>Policy</strong> and select <strong>LAB_DCs_Local_policy</strong>
- <img src="https://leitian123.github.io/holent2901/img/lab1_1_4_4.PNG" width="800"/></li>
+ <img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab1_1_4_4.PNG" width="800"/></li>
 <li>Click <strong>update</strong> and <strong>Next</strong> to configuration change window. Click the checkbox to <strong>Confirm configuration changes</strong> and click OK to push the change.</li>
 <li>Under the <strong>Device</strong> template tab, locate template <strong>Lab_DC2_V01</strong> and select <strong>Edit</strong></li>
 <li>Under the <strong>Additional Templates</strong> section, click the dropdown next to <strong>Policy</strong> and select <strong>LAB_DCs_Local_policy</strong></li>
@@ -397,11 +397,11 @@
 <li>Access the feature template configuration from <strong>Configuration - Templates - Feature</strong></li>
 <li>Locate the feature template <strong>Lab_DC_VPN1_BGP_V01</strong> and select the three dots on the right side and then click <strong>Edit</strong>.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task1_bgp_ft_1.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task1_bgp_ft_1.png" width="800"/></p>
 <ul>
 <li>Select the <strong>Neighbor</strong> section, then click on the pencil icon under Action.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task1_bgp_ft_2.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task1_bgp_ft_2.png" width="800"/></p>
 <ul>
 <li>Update the following:<ul>
 <li>Change <strong>Address Family</strong> to Global and set to <strong>On</strong></li>
@@ -412,35 +412,35 @@
 </li>
 <li>Then click on Save changes and Click on Update</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task1_bgp_ft_3.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task1_bgp_ft_3.png" width="800"/></p>
 <ul>
 <li>Then click Next and then Update. Feel free to review the config changes, then click Configure Devices, then check the Confirm configuration box and click on OK.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task1_bgp_ft_4.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task1_bgp_ft_4.png" width="800"/></p>
 <h4 id="step-16-verify-omp-tags"><strong>Step 1.6</strong> Verify OMP Tags</h4>
 <ul>
 <li>SSH to DC wEdge routers(<strong>DC1-WE1,DC1-WE2,DC2-WE1,DC2-WE2</strong>) and run <strong><code>show ip bgp vpnv4 vrf 1 &lt;prefix&gt;</code></strong> (10.100.100.0/24,10.200.200.0/24)</li>
 <li>You should see the proper OMP tags are now set to 1000 and 2000</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task1_bgp_ft_5.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task1_bgp_ft_5.png" width="800"/></p>
 <h2 id="task-2-hub-spoke-topologies">Task 2: Hub &amp; Spoke Topologies</h2>
 <p>In this section, you are going to use a centralized policy to build the hub &amp; spoke topology. This will include the hub on both DCs as well as RH.</p>
 <h4 id="step-21-pre-config-verifications"><strong>Step 2.1.</strong> Pre-config verifications</h4>
 <ul>
 <li>SSH to <strong>R1-WE1</strong> and run the <code>show sdwan omp route vpn 1</code> command.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task2_Routes_1.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task2_Routes_1.png" width="800"/></p>
 <p><strong>Question: Do you know why the default route learned from private2 shown as invalid and unreachable (Inv,U)</strong>? </n></p>
 <p>This is because R1-WE1 doesn't have a transport with private 2 color. If you check the route on R2-WE1, you should notice the next hop from private 1 marked as <strong>(Inv,U)</strong> for the same reason, because the private 1 color doesn't exist on R2-WE1.</p>
 <p><strong>Question: Did you notice the default route is learned from 1.1.30.1 which is the Regional Hub(RH)? Do you know why?</strong> </n></p>
 <p>To answer this question, we will check the route table at vSmart as all the routes are advertised by vSmart. SSH to vSmart and run <code>show omp route vpn 1 0.0.0.0/0 detail | t</code></p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task2_Routes_2.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task2_Routes_2.png" width="800"/></p>
 <p>OMP is very much like BGP when it comes down to route preference. In the order of preference, there is an origin-protocol, in this case the default route learned on RH is from Static (by design, in real deployment, it's probably going to be BGP as well); whereas the default learned from the DCs is from iBGP. The Origin protocol static route is more preferred than iBGP.</p>
 <p>Now, let's look at the specific routes learned from DC. Do <code>show sdwan omp route vpn 1 10.100.100.0/24</code> on <strong>R1-WE1</strong>.</p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task2_Routes_3.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task2_Routes_3.png" width="800"/></p>
 <p><strong>Question: you will see 4 paths and one of the paths shows Inv,U. Hopefully you can answer why that is. But why are there 4 paths?</strong></p>
 <p>Let's SSH to <strong>vSmart</strong> and do <code>show omp route vpn 1 10.100.100.0/24 | t</code>.</p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task2_Routes_4.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task2_Routes_4.png" width="800"/></p>
 <p>You will see 12 ECMP routes marked as <strong>C,R</strong> (Chosen,Resolved). Why 12? This is because we have 4 DC wEdges each with 3 transports, so there are total of 12 paths. </n></p>
 <p>The next question will be why there are only 4 paths on the remote wEdges? This is because the ECMP settings on the wEdge by default are set to 4. If you change it to the current maximum of 16, you will see all 12 paths.(It will be increased to a maximum of 128 in a future release) </n></p>
 <p><span style="background-color:lightblue"> <strong>Note: vSmart randomly selects 4 paths (or whatever the max ECMP value is set to) and installs them on the device. This may pose problem in a large deployment where multiple paths is more than 16.</strong></p>
@@ -457,7 +457,7 @@
 <p>Click <strong>Add Topology</strong> under <strong>Topology</strong> and select <strong>Custom Control( Route&amp;TLOC )</strong></p>
 </li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task2_topo_1.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task2_topo_1.png" width="800"/></p>
 <p>You are going to create two topologies, one for each remote site.</p>
 <ul>
 <li>Create the topology policy for Remote1<ul>
@@ -467,7 +467,7 @@
 <li>Click <strong>+Sequence Rule</strong>, leave unchanged under Match(means match all)</li>
 <li>Click <strong>Actions</strong> and change to <strong>Accept</strong> (we'll come back and do the route policy later).</li>
 <li>Click <strong>Save Match And Actions</strong> to save the rule
-<img src="https://leitian123.github.io/holent2901/img/lab_task2_topo_2.png" width="800"/></li>
+<img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task2_topo_2.png" width="800"/></li>
 <li>Click <strong>+Sequence Type</strong> then select <strong>TLOC</strong></li>
 <li>Click <strong>+Sequence Rule</strong>, select <strong>TLOC</strong> for March condition</li>
 <li>Under <strong>Match Conditions</strong>, selects <strong>DCs-BU1-TLOCs</strong> for <strong>TLOC List</strong> (this TLOC list has been pre-defined for you which includes all the TLOCs of DC1-WE1 and DC2-WE1</li>
@@ -481,7 +481,7 @@
 <li>Then click save Control Policy.</li>
 </ul>
 <p>This policy effectively allows R1-WE1 to build tunnels to all the DCs-BU1 devices (DC1-WE1 and DC2-WE1) as well as RH. Nothing else is allowed as the default action is reject.</p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task2_topo_3.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task2_topo_3.png" width="800"/></p>
 <ul>
 <li>Follow the above steps and create another topology for Remote2 with the following settings:<ul>
 <li>Name: <strong>LAB_Topo_RS2</strong></li>
@@ -489,7 +489,7 @@
 <li>Click <strong>+Sequence Type</strong> then select <strong>Route</strong></li>
 <li>Click <strong>+Sequence Rule</strong>, leave unchanged under Match(means match all),</li>
 <li>Click <strong>Actions</strong> change Actions to <strong>Accept</strong> (we'll come back and do the route policy later).
-<img src="https://leitian123.github.io/holent2901/img/lab_task2_topo_4.png" width="800"/></li>
+<img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task2_topo_4.png" width="800"/></li>
 <li>Click <strong>+Sequence Type</strong> then select <strong>TLOC</strong></li>
 <li>Click <strong>+Sequence Rule</strong>, select <strong>TLOC</strong> for March condition</li>
 <li>Under <strong>Match Conditions</strong>, selects <strong>DCs-BU2-TLOCs</strong> for <strong>TLOC List</strong> (this TLOC list has been pre-defined for you which includes all the TLOCs of DC1-WE2 and DC2-WE2)</li>
@@ -504,7 +504,7 @@
 <li>Then click save Control Policy.</li>
 </ul>
 <p>This policy effectively allows R2-WE1 to build tunnels to all the DCs-BU1 devices (DC1-WE2 and DC2-WE2) as well as RH. Nothing else is allowed as the default action is reject.</p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task2_topo_5.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task2_topo_5.png" width="800"/></p>
 <h4 id="step-23-apply-the-topology-policy-to-centralized-policy"><strong>Step 2.3.</strong> Apply the topology policy to Centralized Policy</h4>
 <ul>
 <li>Login to vManage <strong>198.18.133.200</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
@@ -514,8 +514,8 @@
 <li>Click on Add Topology</li>
 <li>Follow the steps above to add topology <strong>LAB_Topo_RS2</strong> as well</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task2_topo_6.png" width="800"/></p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task2_topo_7.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task2_topo_6.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task2_topo_7.png" width="800"/></p>
 <ul>
 <li>Click <strong>Next</strong> and proceed to the last step for Applying Policies to Sites and VPNs<ul>
 <li>Policy Name: <strong>LAB_Central_v01</strong></li>
@@ -526,20 +526,20 @@ then click Save Policy</li>
 </ul>
 </li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task2_topo_8.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task2_topo_8.png" width="800"/></p>
 <h4 id="step-24-activate-the-first-centralized-policy"><strong>Step 2.4.</strong> Activate the first Centralized Policy</h4>
 <ul>
 <li>Login to vManage <strong>198.18.133.200</strong> and access policy configuration from <strong>Configuration - Policies - Centralized Policy</strong></li>
 <li>Locate policy <strong>LAB_Centeral_v01</strong> you have created in previous step. Click <strong>...</strong> for more options and select <strong>Activate</strong>. The policy will be pushed to the vSmarts.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task2_topo_9.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task2_topo_9.png" width="800"/></p>
 <h4 id="step-25-verify-the-hub-spoke-topology"><strong>Step 2.5.</strong> Verify the hub &amp; spoke topology</h4>
 <ul>
 <li>SSH to R1-WE1 &amp; R2-WE1 and run <code>show sdwan bfd sessions</code>command</li>
 <li>Verify there is no bfd session between R1-WE1 and R2-WE1</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task2_topo_10.png" width="800"/>
-<img src="https://leitian123.github.io/holent2901/img/lab_task2_topo_11.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task2_topo_10.png" width="800"/>
+<img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task2_topo_11.png" width="800"/></p>
 <h2 id="task-3-default-route-handling">Task 3: Default Route handling</h2>
 <p>In this task. you will configure the central policy to prefer the default route learned from DC over RH. You will need to modify the Centralized policy so that the default route from DC has higher OMP preference over RH.</p>
 <h4 id="step-31-new-central-policy"><strong>Step 3.1.</strong>  New Central Policy</h4>
@@ -552,11 +552,11 @@ then click Save Policy</li>
 <li>Click the <strong>Custom Options</strong> drop down on the top right and select <strong>Topology</strong> under <strong>Centralized Policy</strong></li>
 <li>Locate policy <strong>LAB_Topo_RS1</strong>, click <strong>...</strong> and select <strong>Copy</strong>.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task3_routes_1.png" width="800"/>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task3_routes_1.png" width="800"/>
 - Provide a name and description for the new policy
     - Name: <strong>LAB_Topo_RS1_V02</strong>
     - Description: <strong>+Default Route handling</strong></p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task3_routes_2.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task3_routes_2.png" width="800"/></p>
 <h4 id="step-32-edit-the-new-topology-policy"><strong>Step 3.2.</strong> Edit the new topology policy.</h4>
 <ul>
 <li>Click the <strong>Custom Options</strong> drop down on the top right and select <strong>Topology</strong> under <strong>Centralized Policy</strong></li>
@@ -577,7 +577,7 @@ then click Save Policy</li>
 <ul>
 <li>Click <strong>Save Control policy</strong>.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task3_routes_3.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task3_routes_3.png" width="800"/></p>
 <h4 id="step-33-apply-the-policy"><strong>Step 3.3.</strong> Apply the policy</h4>
 <ul>
 <li>
@@ -591,27 +591,27 @@ then click Save Policy</li>
 <ul>
 <li>Under <strong>Topology</strong> tab, select <strong>LAB_Topo_RS1</strong>. Click <strong>...</strong> and select <strong>Detach</strong> to remove this topology.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task3_routes_4.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task3_routes_4.png" width="800"/></p>
 <ul>
 <li>Click <strong>Add Topology</strong>, select <strong>Import Existing Topology</strong> and then select <strong>LAB_Topo_RS1_V02</strong>, and click Import.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task3_routes_5.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task3_routes_5.png" width="800"/></p>
 <ul>
 <li>Click on <strong>Policy Application</strong></li>
 <li>Under <strong>LAB_Topo_RS1_V02 - Outbound Site List</strong>, click <strong>New Site List</strong> and select <strong>RS1</strong>.</li>
 <li>Click <strong>Add</strong>, Save Policy Changes to Activate.</li>
 </ul>
 <p><span style="background-color:lightblue"> <strong>Note: The Outbound and Inbound options are from the vSmart's perspective where outbound policy means how the routes are sent out from vSmart; inbound policy means how the routes are sent to the vSmart.</strong></p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task3_routes_6.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task3_routes_6.png" width="800"/></p>
 <h4 id="step-34-verify-change-of-default-route"><strong>Step 3.4.</strong> Verify change of default route</h4>
 <ul>
 <li>SSH to <strong>R1-WE1</strong> and do <code>show sdwan omp route</code> and check the learned TLOC for the default route as well as preference.
 </n></li>
 </ul>
 <p><span style="background-color:yellow"> <strong>We're expecting the routes which are learned from DC1-WE1 and DC2-WE1 with preference of 100. However, the output shows the routes are not changed at all, the three installed routes are still learned from RH and no preference set either. Why is that?</strong></p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task3_routes_7.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task3_routes_7.png" width="800"/></p>
 <p>Let's check omp route table on the vSmart, SSH to vSmart and run <code>show omp route | t</code>. </n></p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task3_routes_8.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task3_routes_8.png" width="800"/></p>
 <p>As you recall, the OMP routes don't have any changes either where 3 paths learned from RH are marked with C,R due to routes being originated from Static which are preferred over originated from iBGP. But why doesn't the outbound policy that is setting the routes originated from DC1-WE1 and DC2-WE1 work? <strong>This is because by default the outbound policy will only apply to the routes with "C,R", the routes without "C,R" are not applicable</strong>. So the routes from DCs are not even going through the outbound policies. There are multiple ways to change this default behavior such as using inbound policy or configure send-backup path, or make every route with C.R. In this lab, we are going to use inbound policy to influence the route.</p>
 <p>Let's configure an vSmart <strong>inbound policy</strong> to make the default routes learned from DCs have a higher OMP preference than RH's.</p>
 <p><span style="background-color:lightblue"> <strong>Note: Using vSmart inbound policy may not be an ideal solution for all scenarios. It is recommended to use outbound policy, because it is simple and maintains full visibility of vSmart. vSmart inbound policy can be considered only if outbound policy can NOT meet the requirements.</strong></p>
@@ -632,7 +632,7 @@ then click Save Policy</li>
 </ul>
 </li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task3_routes_9a.PNG" width="800"/>  </p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task3_routes_9a.PNG" width="800"/>  </p>
 <ul>
 <li>Click <strong>+Sequence Type</strong> and select <strong>Route</strong></li>
 <li>Click <strong>+Sequence Rule</strong><ul>
@@ -649,7 +649,7 @@ then click Save Policy</li>
 </ul>
 </li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task3_routes_9.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task3_routes_9.png" width="800"/></p>
 <ul>
 <li>Apply this new topology to the current policy.</li>
 <li>Login to vManage <strong>198.18.133.200</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
@@ -657,23 +657,23 @@ then click Save Policy</li>
 <li>Click Topology tab and click <strong>Add Topology</strong></li>
 <li>Select <strong>Import Existing Topology</strong> and select <strong>Custom Control( Route and TLOC)</strong> Policy Type then select <strong>default_route_from_DC</strong> from drop down; click Import.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task3_routes_10.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task3_routes_10.png" width="800"/></p>
 <ul>
 <li>Click on <strong>Policy Application</strong>, click on <strong>New Site List</strong> under <strong>Inbound Site List</strong>, select <strong>DCs</strong>.</li>
 <li>Click on Add and <strong>Save Policy Changes</strong> to Activate.</li>
 </ul>
 <p><span style="background-color:lightblue"> <strong>Note: This time there is an inbound policy where the inbound policy controls how vSmart sees the routes.</strong></p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task3_routes_11.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task3_routes_11.png" width="800"/></p>
 <h4 id="step-36-verify"><strong>Step 3.6.</strong> Verify</h4>
 <ul>
 <li>SSH to the vSmart and run <code>show omp route vpn 1 | t</code></li>
 <li>Here you will see the routes from both DCs are C,R with preference 50 now which is expected.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task3_routes_12.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task3_routes_12.png" width="800"/></p>
 <ul>
 <li>SSH to <strong>R1-WE1</strong> and do <code>show sdwan omp route vpn 1</code>. You will see 4 paths from DCs with preference 100. Remember the vSmart outbound policy we assign preference of 100 where the inbound policy we assign preference of 50 so that we can differentiate which policy is taking effect.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task3_routes_13.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task3_routes_13.png" width="800"/></p>
 <p><strong>Well done! You have finished the default route handling task for R1-WE1.Let's configure the same policy for R2-WE1.</strong></p>
 <h4 id="step-37-create-topology-policy-for-remote2"><strong>Step 3.7.</strong> Create topology policy for Remote2</h4>
 <ul>
@@ -681,7 +681,7 @@ then click Save Policy</li>
 <li>Click <strong>Custom Options</strong> on the upper right corner and select <strong>Topology</strong> under <strong>Centralized Policy</strong>.</li>
 <li>Locate <strong>LAB_Topo_RS1_V02</strong> click <strong>...</strong> select copy and change Name and Description to <strong>LAB_Topo_RS2_v02</strong> then click Copy.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task3_routes_14.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task3_routes_14.png" width="800"/></p>
 <ul>
 <li>Locate newly created <strong>LAB_Topo_RS2_v02</strong>. click <strong>...</strong> select Edit</li>
 <li>Select <strong>TLOC</strong> as the Sequence Type; select <strong>Rule1</strong> and click the pencil to <strong>Edit</strong>.</li>
@@ -690,37 +690,37 @@ then click Save Policy</li>
 <ul>
 <li>Remove <strong>DCs-BU1-TLOCs</strong> by clicking the <strong>x</strong>, then select <strong>DCs-BU2-TLOCs</strong> and click <strong>Save Match and Actions</strong>.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task3_TLOC_15.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task3_TLOC_15.png" width="800"/></p>
 <ul>
 <li>Select <strong>Route</strong> as the <strong>Sequence Type</strong>, you need to change the <strong>originator</strong> from <strong>1.1.10.1</strong> to <strong>1.1.10.2</strong> and <strong>1.1.20.1</strong> to <strong>1.1.20.2</strong>. By doing this, default route from DC1-WE2 and DC2-WE2 will have OMP preference of 100 sent to R2-WE2 site.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task3_routes_15.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task3_routes_15.png" width="800"/></p>
 <ul>
 <li>After <strong>Save Control Policy</strong>, access the <strong>Centralized Policy</strong> from <strong>Configuration - Policies</strong></li>
 <li>Locate <strong>LAB_Central_v01</strong> and select <strong>Edit</strong>  </li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task3_routes_16.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task3_routes_16.png" width="800"/></p>
 <ul>
 <li>Under <strong>Topology</strong> tab, click <strong>Add Topology</strong> and select <strong>Import Existing Topology</strong></li>
 <li>Change Policy Type to <strong>Custom Control( Route and TLOC )</strong>; select <strong>LAB_Topo_RS2_V02</strong> and Import.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task3_routes_17.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task3_routes_17.png" width="800"/></p>
 <ul>
 <li>Select existing topology <strong>LAB_Topo_RS2</strong>, click <strong>detach</strong> to remove it from Centralized Policy.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task3_routes_18.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task3_routes_18.png" width="800"/></p>
 <ul>
 <li>Click <strong>Policy Application</strong>; under <strong>LAB_Topo_RS2_V02</strong> click <strong>New Site List</strong> and select <strong>RS2</strong> as outbound site list.</li>
 <li>Click Add, and <strong>Save Policy Changes</strong> to Activate.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task3_routes_19.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task3_routes_19.png" width="800"/></p>
 <ul>
 <li>Once the policy has been pushed to vSmart, let's verify.</li>
 <li>SSH to <strong>R2-WE1</strong> and run <code>show ip route vrf 1</code>. Now, the default route has two ECMP paths, one path for each DC.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task3_routes_20.png" width="800"/>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task3_routes_20.png" width="800"/>
 - Do <code>show sdwan omp route vpn 1</code>.You will see that there are 4 paths in the OMP route table, however none of them is valid.</p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task3_routes_21.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task3_routes_21.png" width="800"/></p>
 <h2 id="task-4-specific-routes-handling">Task 4: Specific Routes handling</h2>
 <p>ACME wants to prefer more specific routes originated from its DC and use the other DC as backup. For BU1 (R1-WE1), it only needs to learn the routes from BU1's Headend devices (DC1-WE1 and DC2-WE1); for BU2(R2-WE1), it onlys need to learn the routes from BU2's Headend devices.(DC1-WE2 and DC2-WE2).
 </n></p>
@@ -766,11 +766,11 @@ then click Save Policy</li>
 <li>Click <strong>Save policy</strong> to Activate. This will make the vSmart to push the policy immediately after you confirm configuring devices</li>
 </ul>
 <p><strong>This is expected, creating a new policy is a best practice. Otherwise updating the existing active policy will cause an immediate policy push.</strong></p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task4_routes_1.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task4_routes_1.png" width="800"/></p>
 <ul>
 <li>To verify, SSH to <strong>R1-WE1</strong> and run <code>show sdwan omp route vpn 1</code></li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task4_routes_2.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task4_routes_2.png" width="800"/></p>
 <p>Here we can see 4 paths for 10.100.100.0/24, however we see 3 paths with preference of 100. One path doesn't have any preference; For 10.200.200.0/24, there are 4 paths however 3 paths have a preference of 50, one path doesn't have any preference. If you look at it closely you will notice that the paths picked are from the lowest system-ip.</p>
 <p>This is because by default vSmart will only send 4 paths to the wEdges. When vSmart is going through the outbound policy, it takes a route from vsmart route table in the winning order (marked as C,R) and compare it with the outbound policy as long as there is a match (permit) in the policy for a particular prefix, it will send it out and count it as one until it hits the send-path-limits which is 4 by default. Since in our route-policy, we have a permit all at the end which means every route will have a match, therefore first 4 routes in the winning order are sent out regardless which rule they're matching in the policy. There are multiple ways to fix this, the simple way is to change the limit to 16 on both vSmart as well as on the wEdges.</p>
 <h4 id="step-42-configure-16-paths-ecmp">Step 4.2: Configure 16 paths ECMP</h4>
@@ -784,7 +784,7 @@ then click Save Policy</li>
 <li>Under <strong>Device</strong> template tab, locate template <strong>vSmart</strong> and select <strong>Edit</strong></li>
 <li>Under <strong>OMP</strong> config section, add configure <strong>send-path-limit 16</strong>. Click update to complete the configuration.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task4_routes_3.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task4_routes_3.png" width="800"/></p>
 <ul>
 <li>Change ecmp-limit to 16 on the wEdges.</li>
 <li>Access template configuration from <strong>Configuration - Templates</strong></li>
@@ -793,7 +793,7 @@ then click Save Policy</li>
 <li>Click update to push configuration changes.</li>
 </ul>
 <p><span style="background-color:lightblue"> <strong>Note: This OMP feature template is used on all device templates. Where we modify this one feature template, it will change the configuration on all devices, in our case on all 7 WAN Edges.</strong></p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task4_routes_4.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task4_routes_4.png" width="800"/></p>
 <h4 id="step-43-verification">Step 4.3: Verification</h4>
 <ul>
 <li>
@@ -803,12 +803,12 @@ then click Save Policy</li>
 <p>You should see each route for (10.100.100.0/24 and 10.200.200.0/24) will have 12 paths and 3 paths from the preferred DC with preference of 100, 3 paths from secondary DC with preference of 50, another 6 paths from are invalid from other BU hub devices.</p>
 </li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task4_routes_5.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task4_routes_5.png" width="800"/></p>
 <ul>
 <li>Now run <code>show ip route vrf 1</code>
 You will see route 10.100.100.0/24 is learned from 1.1.10.1, and route 10.200.200.0/24 is learned from 1.1.20.1 which is desired.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task4_routes_6.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task4_routes_6.png" width="800"/></p>
 <h4 id="step-44-modify-topology-policy-for-remote2">Step 4.4: Modify Topology policy for remote2</h4>
 <ul>
 <li>Login to vManage <strong>198.18.133.200</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
@@ -850,7 +850,7 @@ You will see route 10.100.100.0/24 is learned from 1.1.10.1, and route 10.200.20
 <li>click <strong>Save policy</strong> to Activate. This will make the vSmart to push the policy immediately after you confirm configuring devices</li>
 </ul>
 <p><strong>This is expected, creating a new policy is a best practice. Otherwise updating the existing active policy will cause an immediate policy push.</strong></p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task4_routes_7.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task4_routes_7.png" width="800"/></p>
 <h4 id="step-45-verification">Step 4.5: Verification</h4>
 <ul>
 <li>
@@ -860,7 +860,7 @@ You will see route 10.100.100.0/24 is learned from 1.1.10.1, and route 10.200.20
 <p>Here you can see each route (10.100.100.0/24 and 10.200.200.0/24) will have 12 paths - however 3 paths from the preferred DC have a preference of 100, 3 paths from the secondary DC have a preference of 50, and another 6 paths from are invalid from other BU hub devices.</p>
 </li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task4_routes_8.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task4_routes_8.png" width="800"/></p>
 <ul>
 <li>
 <p>Run <code>show ip route vrf 1</code></p>
@@ -869,7 +869,7 @@ You will see route 10.100.100.0/24 is learned from 1.1.10.1, and route 10.200.20
 <p>Here you will see 10.100.100.0/24 is learned from 1.1.10.2; 10.200.200.0/24 is learned from 1.1.20.2 which is desired.</p>
 </li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task4_routes_9.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task4_routes_9.png" width="800"/></p>
 <h6 id="this-concludes-the-routing-handling-for-the-specific-routes"><strong>This concludes the routing handling for the specific routes.</strong></h6>
 <h2 id="task-5-application-aware-routing">Task 5: Application Aware Routing</h2>
 <p>ACME wants to provide the best user experience for their transactional data which has to meet the below SLA requirement ( we will use SSH to simulate this). ACME would also like to use private 1 as the preferred link, if private 1 doesn't meet the SLA requirement, it will use private 2 when private 2 still meets the SLA. The LTE link will only be used when both private 1 and private 2 go down. ACME has the following SLA requirements for their applications.</p>
@@ -919,46 +919,46 @@ You will see route 10.100.100.0/24 is learned from 1.1.10.1, and route 10.200.20
 <li>Access template configuration from <strong>Configuration - Templates</strong></li>
 <li>Under <strong>Feature</strong> template tab, locate template <strong>Lab_RH_VPN0_LTE_V01</strong> and select <strong>Edit</strong></li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task5_LTE_1.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task5_LTE_1.png" width="800"/></p>
 <ul>
 <li>Under the <strong>Tunnel</strong> section, expand <strong>Advanced Options</strong></li>
 <li>Change <strong>Last-Resort Circuit</strong> to <strong>Device Specific</strong> and give it the variable name <strong>vpn_if_tunnel_last_resort_circuit</strong>.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task5_LTE_1a.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task5_LTE_1a.png" width="800"/></p>
 <ul>
 <li>Click <strong>Update</strong> to trigger device configure change.</li>
 <li>Select <strong>vpn_if_tunnel_last_resort_circuit</strong> checkbox and <strong>Update</strong> to push configure change</li>
 </ul>
 <p>This setting will make LTE the last-resort which means the interface will go down, and no other traffic use it until all other circuits become unavailable.</p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task5_LTE_2.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task5_LTE_2.png" width="800"/></p>
 <h4 id="step-52-last-resort-verification">Step 5.2: Last-Resort verification.</h4>
 <ul>
 <li>SSH to <strong>RH-WE</strong> and run <code>show ip int brief</code></li>
 <li>Here you will notice Gig3 and Tunnel3 are both down.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task5_LTE_3.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task5_LTE_3.png" width="800"/></p>
 <ul>
 <li>Run <code>show sdwan control connections</code>. Notice there is no control connections on the LTE interface.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task5_LTE_4.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task5_LTE_4.png" width="800"/></p>
 <ul>
 <li>Run <code>show sdwan bfd sessions</code>. Notice there is no IPSec tunnel over LTE either.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task5_LTE_5.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task5_LTE_5.png" width="800"/></p>
 <h4 id="step-53-configure-sla-classes-for-app-aware-routing-aar">Step 5.3: Configure SLA classes for app aware routing (AAR)</h4>
 <ul>
 <li>Login to vManage <strong>198.18.133.200</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
 <li>Click <strong>Custom Options</strong> drop down on the top right and select <strong>Lists</strong> under <strong>Centralized Policy</strong></li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task5_AAR_1.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task5_AAR_1.png" width="800"/></p>
 <ul>
 <li>Select <strong>SLA Class</strong> and confirm the classes are defined properly.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task5_AAR_2.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task5_AAR_2.png" width="800"/></p>
 <ul>
 <li>Click <strong>Custom Options</strong> drop down on the top right and select <strong>Traffic Policy</strong> under <strong>Centralized Policy</strong></li>
 <li>Select <strong>Application Aware Routing</strong> and <strong>Add Policy</strong> to create new
-<img src="https://leitian123.github.io/holent2901/img/lab_task5_AAR_3.png" width="800"/></li>
+<img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task5_AAR_3.png" width="800"/></li>
 <li>Configure the AAR policy with the setting below:<ul>
 <li>Name: <strong>LAB_AAR_V01</strong></li>
 <li>Description: <strong>LAB_AAR_V01</strong></li>
@@ -976,23 +976,23 @@ You will see route 10.100.100.0/24 is learned from 1.1.10.1, and route 10.200.20
 </li>
 <li>Click <strong>Save Match And Actions</strong></li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task5_AAR_4.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task5_AAR_4.png" width="800"/></p>
 <ul>
 <li>Click 'Save Application Aware Routing Policy'</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task5_AAR_5.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task5_AAR_5.png" width="800"/></p>
 <h4 id="step-54-apply-the-aar">Step 5.4: Apply the AAR</h4>
 <ul>
 <li>Access policy configuration from <strong>Configuration - Policies</strong></li>
 <li>Locate <strong>LAB_Central_v01</strong> click <strong>...</strong> for more option and select <strong>Copy</strong></li>
 <li>Name the new policy <strong>LAB_Central_v02</strong></li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task5_AAR_6.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task5_AAR_6.png" width="800"/></p>
 <ul>
 <li>Select the new policy <strong>LAB_Central_v02</strong>, click <strong>...</strong> for more option and select <strong>Edit</strong></li>
 <li>Under <strong>Traffic Rules - Application Aware Routing</strong>, click <strong>Add Policy</strong> then <strong>Import Existing</strong>, select <strong>LAB_AAR_V01</strong> and Import.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task5_AAR_7.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task5_AAR_7.png" width="800"/></p>
 <ul>
 <li>Click <strong>Policy Application</strong> tab then select <strong>Application Aware Routing</strong><ul>
 <li>Click <strong>New Site List and VPN List</strong> to add it<ul>
@@ -1004,13 +1004,13 @@ You will see route 10.100.100.0/24 is learned from 1.1.10.1, and route 10.200.20
 </li>
 <li>
 <p>Click on Add then <strong>Save Policy Changes</strong>
-<img src="https://leitian123.github.io/holent2901/img/lab_task5_AAR_8.png" width="800"/></p>
+<img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task5_AAR_8.png" width="800"/></p>
 </li>
 <li>
 <p>Activate <strong>LAB_Central_v02</strong> policy by clicking <strong>...</strong> and select <strong>activate</strong>.</p>
 </li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task5_AAR_9.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task5_AAR_9.png" width="800"/></p>
 <h4 id="step-55-lab-verification">Step 5.5: Lab Verification</h4>
 <ul>
 <li>Login to vManage <strong>198.18.133.200</strong> and select <strong>Monitor - Network</strong> from the left panel</li>
@@ -1029,10 +1029,10 @@ You will see route 10.100.100.0/24 is learned from 1.1.10.1, and route 10.200.20
 <li>Click <strong>Simulate</strong></li>
 </ul>
 <p>You should see the traffic is only taking the private1 path which means it's using private1 as the preferred transport.</p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task5_AAR_10.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task5_AAR_10.png" width="800"/></p>
 <p>Do another simulation, this time change the destination port to 23, everything else remains the same.</p>
 <p>You should see the traffic will use both <strong>private1</strong> and <strong>private2</strong> which means it uses all available circuits for all other traffic.
-<img src="https://leitian123.github.io/holent2901/img/lab_task5_AAR_11.png" width="800"/></p>
+<img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task5_AAR_11.png" width="800"/></p>
 <ul>
 <li>Now let's shutdown the private1 interface of the RH-WE1 and verify again.</li>
 <li>Access template configuration from <strong>Configuration - Templates</strong></li>
@@ -1041,7 +1041,7 @@ You will see route 10.100.100.0/24 is learned from 1.1.10.1, and route 10.200.20
 <li>Select the <strong>Shutdown(vpn_if_interface)</strong> checkbox under <strong>GigabitEthernet1</strong></li>
 <li>Click Update -&gt; next to trigger the configuration change.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task5_AAR_12.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task5_AAR_12.png" width="800"/></p>
 <ul>
 <li>
 <p>Now let's verify it again.</p>
@@ -1064,7 +1064,7 @@ You will see route 10.100.100.0/24 is learned from 1.1.10.1, and route 10.200.20
 <li>Click <strong>Simulate</strong></li>
 </ul>
 <p>You should see that traffic is only taking the private2 path now as this is the only color available.</p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task5_AAR_13.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task5_AAR_13.png" width="800"/></p>
 <ul>
 <li>Let's shutdown private2 interface and verify again</li>
 <li>Access the Template configuration from <strong>Configuration - Templates</strong></li>
@@ -1095,9 +1095,9 @@ You will see route 10.100.100.0/24 is learned from 1.1.10.1, and route 10.200.20
 <li>Click <strong>Simulate</strong></li>
 </ul>
 <p>You should see the traffic is taking LTE interface only.
-<img src="https://leitian123.github.io/holent2901/img/lab_task5_AAR_14.png" width="800"/></p>
+<img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task5_AAR_14.png" width="800"/></p>
 <p><strong>Great! You've completed lab1. Before you proceed to next lab, let's no shutdown private1 and private2 interfaces, and disable LTE last-resort by changing the device value of RH-WE1's device template.</strong></p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab_task5_AAR_15.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task5_AAR_15.png" width="800"/></p>
 <p><a href="JAVASCRIPT:scroll(0,0)" style="color:blue">Back to Top</a></p>
               
             </div>

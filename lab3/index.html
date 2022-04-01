@@ -346,29 +346,29 @@
 <p>Click <strong>Custom Options</strong> drop down on the top right and select <strong>Lists</strong> under <strong>Localized Policy</strong></p>
 </li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_1_1.PNG" width="800"/>  </p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_1_1_1.PNG" width="800"/>  </p>
 <ul>
 <li>Click <strong>Class Map</strong> list type on the left and add <strong>New Class List</strong>. In the pop up window enter <strong>REALTIME</strong> in Class filed, and select <strong>0</strong> from Queue dropdown.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_1_2.PNG" width="800"/>  </p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_1_1_2.PNG" width="800"/>  </p>
 <ul>
 <li>After save <strong>REALTIME</strong> class, add following three classes.</li>
 <li>Class: <strong>SIGNALING</strong>  Queue: <strong>1</strong></li>
 <li>Class: <strong>DEFAULT</strong>  Queue: <strong>2</strong></li>
 <li>Class: <strong>CRITICAL</strong> Queue: <strong>3</strong></li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_1_3.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_1_1_3.PNG" width="800"/></p>
 <ul>
 <li>Click <strong>Custom Options</strong> drop down on the top right and select <strong>Lists</strong> under <strong>Centralized Policy</strong></li>
 <li>Click <strong>Application</strong> list type on the left and add <strong>New Application List</strong>. In the application configure window enter <strong>REALTIME</strong> in Application List Name, and select "<strong>RTP(Real Time Protocol)</strong>, <strong>WebEX</strong>, <strong>Zoom</strong>" from Application drop list.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_1_5.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_1_1_5.PNG" width="800"/></p>
 <ul>
 <li>After save "REALTIME" Application, add following two Applications</li>
 <li>Application List Name: <strong>SIGNALING</strong> Application: <strong>Real Time Control Protocol, Media Gateway Control Protocol, Session Initiation Protocol</strong></li>
 <li>Application List Name: <strong>CRITICAL</strong> Application: <strong>Secure Shell, SImple Network Management Protocol, SMB</strong></li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_1_6.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_1_1_6.PNG" width="800"/></p>
 <h4 id="step-12-central-data-policy-for-classification">Step 1.2: Central Data Policy for classification</h4>
 <ul>
 <li>
@@ -381,7 +381,7 @@
 <p>Select <strong>Traffic Data</strong> and select Add Policy to <strong>Create New</strong> data policy</p>
 </li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_2_1.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_1_2_1.PNG" width="800"/></p>
 <ul>
 <li>Enter <strong>Lab_QoS_v01</strong> in <strong>Name</strong> and <strong>Description</strong></li>
 <li>Click <strong>+Sequence Type</strong> and select <strong>QoS</strong> for new data policy type</li>
@@ -393,20 +393,20 @@
 </ul>
 </li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_2_2.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_1_2_2.PNG" width="800"/></p>
 <ul>
 <li>After <strong>Save Data Policy</strong>, go back to the <strong>Centralized Policy</strong> configuration and edit central policy <strong>LAB_Central_V02</strong></li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_2_3.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_1_2_3.PNG" width="800"/></p>
 <ul>
 <li>Click <strong>Traffic Rules</strong> tab on the top then click <strong>Traffic Data</strong> and select <strong>Import Existing</strong> to add QoS data policy <strong>Lab_QoS_v01</strong></li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_2_4.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_1_2_4.PNG" width="800"/></p>
 <ul>
 <li>Click <strong>Policy Application</strong> tab on the top then click <strong>Traffic Data</strong> to assign the qos data policy.</li>
 <li>To have consistent QoS policy for the fabric, We will apply the QoS policy to all sites and all VPNs on service side as show in below screenshot.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_2_5.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_1_2_5.PNG" width="800"/></p>
 <ul>
 <li>Click <strong>Add</strong> and <strong>Save Policy Changes</strong> then <strong>Active</strong> the updated central policy.   </li>
 </ul>
@@ -423,21 +423,21 @@
 </li>
 <li>Click <strong>Add Queue</strong> to add policy for <strong>SIGNALING</strong> class as show below.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_3_1.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_1_3_1.PNG" width="800"/></p>
 <ul>
 <li>Click <strong>Add Queue</strong> to add policy for <strong>CRITICAL</strong> class as show below</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_3_2.PNG" width="800"/>   </p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_1_3_2.PNG" width="800"/>   </p>
 <ul>
 <li>
 <p>Click <strong>Add Queue</strong> to add policy for <strong>DEFAULT</strong> class as show below</p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_3_3.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_1_3_3.PNG" width="800"/></p>
 </li>
 <li>
 <p>The QoS queuing policy will look similar to screenshot below.</p>
 </li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_3_4.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_1_3_4.PNG" width="800"/></p>
 <ul>
 <li>After queuing policy is created, save the queueing policy. Then you will create localized policy that includes the queueing policy.</li>
 </ul>
@@ -449,7 +449,7 @@
 <li>Click next proceeding to Policy Overview. Type <strong>LAB_Remote_Local_v01</strong> in Policy Name and Description filed.</li>
 <li>Check <strong>Netflow</strong> and <strong>Application</strong> at the bottom from Policy Settings and <strong>Save Policy</strong></li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_3_5.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_1_3_5.PNG" width="800"/></p>
 <h4 id="step-14-apply-qos-queuing-policy">Step 1.4: Apply QoS queuing policy</h4>
 <p>Applying QoS queuing policy is two step process, first you need to associate the localized policy to the device template, and next you need reference the queueing policy-map on transport interface.</p>
 <ul>
@@ -457,7 +457,7 @@
 <li>Under <strong>Device</strong> template tab, locate template <strong>Lab_R1_V01</strong> and select <strong>Edit</strong></li>
 <li>Associate <strong>Lab_Remote_VPN1_V01</strong> localized policy to the template as show below</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_4_1.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_1_4_1.PNG" width="800"/></p>
 <ul>
 <li>Click <strong>Update</strong> to push the new localized policy configuration.</li>
 <li>Repeat the above steps to associate policy for template <strong>Lab_R2_V01</strong></li>
@@ -468,7 +468,7 @@
 <li>Under <strong>Feature</strong> template tab, locate template <strong>Lab_Remote_VPN0_Private1_v01</strong> and select <strong>Edit</strong></li>
 <li>Under ACL/QOS section, hardcode <strong>Lab_QoS_Map_v01</strong> for QoS Map field.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_4_2.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_1_4_2.PNG" width="800"/></p>
 <ul>
 <li>click update to push configuration change.</li>
 <li>Repeat the above steps to update   <strong>Lab_Remote_VPN0_Private2_V01</strong> and <strong>Lab_Remote_VPN0_LTE_V01</strong> feature templates.</li>
@@ -575,7 +575,7 @@
 </li>
 <li>Click update to push configuration change  </li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_2_2_1.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_2_2_1.PNG" width="800"/></p>
 <ul>
 <li>Locate feature template <strong>Lab_RH_VPN0_Private2_V01</strong>, and select <strong>Edit</strong>  </li>
 <li>Configure teh following under <strong>TUNNEL</strong> section<ul>
@@ -592,19 +592,19 @@
 <li>Under <strong>Feature</strong> template tab, locate template <strong>Lab_Remote_VPN0_Private1_v01</strong> and select <strong>Edit</strong></li>
 <li>Under <strong>TUNNEL</strong> section, configure <strong>On</strong> for <strong>Per-tunnel QoS</strong> to enable per-tunnel QoS. Since this is spoke, we will leave <strong>Per-tunnel QoS Aggregator</strong> off.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_2_2_2.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_2_2_2.PNG" width="800"/></p>
 <ul>
 <li>To configure a device as spoke role, you will also need to configure the downstream bandwidth.</li>
 <li>In the same feature template <strong>Lab_Remote_VPN0_Private1_v01</strong>, under <strong>BASIC CONFIGURATION</strong> section</li>
 <li>Specify the downstream bandwidth to 10Mbps for remote1</li>
 <li>Click update to push configuration change  </li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_2_2_3.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_2_2_3.PNG" width="800"/></p>
 <ul>
 <li>locate template <strong>Lab_Remote_VPN0_Private2_v01</strong> and select <strong>Edit</strong></li>
 <li>
 <p>Under <strong>TUNNEL</strong> section, configure <strong>On</strong> for <strong>Per-tunnel QoS</strong> to enable per-tunnel QoS. Since this is spoke, we will leave <strong>Per-tunnel QoS Aggregator</strong> off.</p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_2_2_2.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_2_2_2.PNG" width="800"/></p>
 </li>
 <li>
 <p>To configure a device as spoke role, you will also need to configure the downstream bandwidth.</p>
@@ -613,7 +613,7 @@
 <li>Specify the downstream bandwidth to 20Mbps for remote2</li>
 <li>
 <p>Click update to push configuration change  </p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_2_2_4.PNG" width="800"/>  </p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_2_2_4.PNG" width="800"/>  </p>
 </li>
 </ul>
 <h4 id="step-24-verify-per-tunnel-qos">Step 2.4: Verify per-tunnel QOS</h4>
@@ -650,21 +650,21 @@ src-addr                 dst-addr                 sport   dport   proto remote-t
 <li>Click <strong>TLOC</strong> from <strong>Sequence Type</strong> on the left</li>
 <li>
 <p>Click <strong>Sequence Rule</strong> to add a new rule; configure the rule to match on site list <strong>All-Remotes</strong>, Actions <strong>Accept</strong>. <strong>Save Match And Actions</strong> to add this new rule.</p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_3_1_0.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_3_1_0.PNG" width="800"/></p>
 </li>
 <li>
 <p>Click <strong>Route</strong> from <strong>Sequence Type</strong> on the left</p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_3_1_1.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_3_1_1.PNG" width="800"/></p>
 </li>
 <li>
 <p>Click <strong>Sequence Rule</strong> to add a new rule; configure the rule to match on site list <strong>All-Remotes</strong>, Actions TLOC list <strong>RH_TLOCs</strong> and TLOC Action <strong>Backup</strong>.</p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_3_1_2.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_3_1_2.PNG" width="800"/></p>
 </li>
 <li>
 <p>After <strong>Save Match and And Actions</strong>, drag and drop the newly created rule to seq # 1.</p>
 </li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_3_1_3.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_3_1_3.PNG" width="800"/></p>
 <ul>
 <li>
 <p>Click <strong>Save Control Policy</strong> to push policy update</p>
@@ -680,7 +680,7 @@ src-addr                 dst-addr                 sport   dport   proto remote-t
 <li>Under <strong>Feature</strong> template tab, locate template <strong>Lab_RH_VPN0_v01</strong> and select <strong>Edit</strong></li>
 <li>Under <strong>SERVICE</strong> section, click <strong>New Service</strong> and select <strong>TE</strong> from service type drop down to add it to this feature template.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_3_2_1.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_3_2_1.PNG" width="800"/></p>
 <ul>
 <li>Update to push configure change.</li>
 </ul>
@@ -690,11 +690,11 @@ src-addr                 dst-addr                 sport   dport   proto remote-t
 <li>Name new system template <strong>Lab_Remote_System_V01</strong></li>
 <li>Edit <strong>Lab_Remote_System_V01</strong> to enable <strong>On-demand Tunnel</strong></li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_3_2_2.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_3_2_2.PNG" width="800"/></p>
 <ul>
 <li>
 <p>Locate device template <strong>Lab_R1_V01</strong> and change system template to <strong>Lab_Remote_System_V01</strong></p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_3_2_3.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_3_2_3.PNG" width="800"/></p>
 </li>
 <li>
 <p>Update to push configuration change.</p>
@@ -710,20 +710,20 @@ src-addr                 dst-addr                 sport   dport   proto remote-t
 <li>Login to vManage <strong>198.18.133.200</strong> and access <strong>Monitor - Network</strong></li>
 <li>Select WAN-Edge <strong>R1-WE1</strong></li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_3_3_1.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_3_3_1.PNG" width="800"/></p>
 <ul>
 <li>Click <strong>Real Time</strong> and type in <strong>on demand local</strong> in <strong>Device Options</strong> filed</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_3_3_2.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_3_3_2.PNG" width="800"/></p>
 <ul>
 <li>The output shows local on demand tunnel is enabled and status is active.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_3_3_3.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_3_3_3.PNG" width="800"/></p>
 <ul>
 <li>Type in <strong>on demand remote</strong> in <strong>Device Options</strong> filed    </li>
 <li>The output shows remote on demand tunnel to remote2 <strong>1.1.102.1</strong> is enabled and tunnel status is <strong>inactive</strong></li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_3_3_4.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_3_3_4.PNG" width="800"/></p>
 <ul>
 <li>Dynamic on demand tunnel is triggered by traffic between the local and remote sites. That's why you see status of on demand remote is inactive. Let's generate bi-directional traffic between remote1 and remote2 to trigger on demand tunnel.</li>
 <li>ssh into <strong>R1-VM1</strong> (the Ubuntu host), and run <code>ssh 10.10.102.10</code> to login <strong>R2-VM2</strong> with credential <strong>viptela/viptela</strong></li>
@@ -752,7 +752,7 @@ viptela@remote2_ubuntu:~$
 <li>Go back to <strong>vManage - Monitor - Network - R1-WE1 - Real time</strong> and type in <strong>on demand remote</strong> in <strong>Device Options</strong> filed.</li>
 <li>
 <p>verify the tunnel status for on demand tunnel to remote2 <strong>1.1.102.1</strong> changes <strong>active</strong>      </p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_3_3_5.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_3_3_5.PNG" width="800"/></p>
 </li>
 </ul>
 <h2 id="task-4-ipsec-tunnel-to-sig">Task 4: IPsec tunnel to SIG</h2>
@@ -814,7 +814,7 @@ Antireplay window size = 512
 <li>Login to vManage <strong>198.18.133.200</strong> and access template configuration from <strong>Configuration - Templates - Feature</strong></li>
 <li>Add new IPsec interface feature template for CSR1000v as show below</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_4_1_1.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_4_1_1.PNG" width="800"/></p>
 <ul>
 <li>Configure the template with following fields and leave other fields as default value</li>
 </ul>
@@ -864,25 +864,25 @@ Antireplay window size = 512
 </tr>
 </tbody>
 </table>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_4_1_2.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_4_1_2.PNG" width="800"/></p>
 <ul>
 <li>Add tunnel feature template <strong>Lab_IPsec_Int_V01</strong> to device template <strong>Lab_R1_V01</strong> and <strong>Lab_R2_V01</strong></li>
 <li>Locate device template <strong>Lab_R1_V01</strong> click Edit</li>
 <li>Add <strong>Lab_IPsec_Int_V01</strong> under VPN0</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_4_1_3.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_4_1_3.PNG" width="800"/></p>
 <ul>
 <li>Click save to update and filed in <strong>172.4.101.1/24</strong> for tunnel IP Address</li>
 <li>Click <strong>Update</strong> to configure device</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_4_1_4.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_4_1_4.PNG" width="800"/></p>
 <ul>
 <li>Locate device template <strong>Lab_R2_V01</strong> click Edit</li>
 <li>Add <strong>Lab_IPsec_Int_V01</strong> under VPN0</li>
 <li>Click save to update and filed in <strong>172.4.102.1/24</strong> for tunnel IP Address</li>
 <li>Click <strong>Update</strong> to configure device</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_4_1_5.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_4_1_5.PNG" width="800"/></p>
 <ul>
 <li>The ipsec tunnel will come <strong>UP</strong> on both remote sites. You can verify the tunnel status from <strong>show ip interface brief</strong></li>
 </ul>
@@ -929,7 +929,7 @@ R1-WE1#
 </ul>
 </li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_4_1_6.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_4_1_6.PNG" width="800"/></p>
 <ul>
 <li>Click <strong>Add</strong> to add this ipsec route. Click update to push configure change to both remote sites.</li>
 </ul>
@@ -942,11 +942,11 @@ R1-WE1#
 <p>Verify that you can ping <strong>16.16.16.16</strong> from the VM</p>
 </li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_4_2_1.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_4_2_1.PNG" width="800"/></p>
 <ul>
 <li>Now try access <strong>http://16.16.16.16</strong> from browser. You should see this login page</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_4_2_2.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_4_2_2.PNG" width="800"/></p>
 <h2 id="task-5-dia">Task 5: DIA</h2>
 <p>There are two options to enable DIA.</p>
 <ul>
@@ -997,7 +997,7 @@ traceroute to 1.1.1.1 (1.1.1.1), 30 hops max, 60 byte packets
 </li>
 <li>Add this VPN route and update template to push configure change</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_5_2_1.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_5_2_1.PNG" width="800"/></p>
 <ul>
 <li>ssh into remote1_ubuntu and run <code>traceroute 1.1.1.1</code> to verify the change</li>
 </ul>
@@ -1014,53 +1014,53 @@ traceroute to 1.1.1.1 (1.1.1.1), 30 hops max, 60 byte packets
 </ul>
 <h2 id="task-6-cor-for-saas">Task 6: CoR for SaaS</h2>
 <p>Instead of using the DIA exit point as configured in previous task, for SaaS application <strong>box and salesforce</strong>, ACME wants to use the most optimal path. Configure the remote sites to dynamically chose local DIA or regional hub as exit point for <strong>box and salesforce</strong> based on application performance.</p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_6_0_0.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_6_0_0.png" width="800"/></p>
 <h4 id="step-61-enable-cloud-onramp-for-saas">Step 6.1 Enable Cloud OnRamp for SaaS</h4>
 <ul>
 <li>Login to vManage <strong>198.18.133.200</strong> and access <strong>Administration - Settings</strong></li>
 <li>Edit <strong>Cloud onRamp for SaaS</strong> and check <strong>Enabled</strong></li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_6_1_1.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_6_1_1.PNG" width="800"/></p>
 <h4 id="step-62-add-saas-application">Step 6.2 Add SaaS application</h4>
 <ul>
 <li>Access CoR SaaS configuration via <strong>Configuration - Cloud onRamp for SaaS</strong>  </li>
 <li>From <strong>Manage Cloud OnRamp for SaaS</strong> dropdown, select <strong>Applications and Policy</strong></li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_6_2_1.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_6_2_1.PNG" width="800"/></p>
 <ul>
 <li>Select <strong>Box</strong> and <strong>Salesforce</strong> from the application list; Select <strong>Enabled</strong> from Monitoring dropdown list; Enter <strong>1</strong> for VPN; Select <strong>Enabled</strong> for Policy/Cloud SLA dropdown list.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_6_2_2.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_6_2_2.PNG" width="800"/></p>
 <ul>
 <li>Cloud OnRamp for SaaS uses existing AAR policy, we will keep the system created policy for SaaS. Click <strong>Save Policy</strong> to activate the policy update.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_6_2_3.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_6_2_3.PNG" width="800"/></p>
 <h4 id="step-63-add-sites">Step 6.3 Add sites</h4>
 <p>You are going to configure remote sites as DIA site, and Regional hub as gateway site. Remote sites will monitor the QoE score for local DIA via LTE transport, and also the QoE score for gateway site.</p>
 <ul>
 <li>Access CoR SaaS configuration via <strong>Configuration - Cloud onRamp for SaaS</strong>  </li>
 <li>Click <strong>Manage Cloud OnRamp for SaaS</strong> dropdown list on the upper left, and select <strong>Gateway</strong></li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_6_3_1.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_6_3_1.PNG" width="800"/></p>
 <ul>
 <li>Click <strong>Attach Gateways</strong>,  select <strong>RH-WE1</strong> and move it to <strong>selected Sites</strong>. Click <strong>Add interfaces to selected sites</strong>.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_6_3_2.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_6_3_2.PNG" width="800"/></p>
 <ul>
 <li>In the pop up window, under <strong>Interface</strong> field select interface <strong>GigabitEthernet4</strong> from the list.</li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_6_3_3.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_6_3_3.PNG" width="800"/></p>
 <ul>
 <li>Click <strong>Manage Cloud OnRamp for SaaS</strong> dropdown list on the upper left, and select <strong>DIA Sites</strong></li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_6_3_4.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_6_3_4.PNG" width="800"/></p>
 <ul>
 <li>Select <strong>Attach DIA Sites</strong>, select <strong>R1-WE1</strong> and <strong>R2-WE1</strong> and move it to <strong>selected Sites</strong>.       </li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_6_3_5.PNG" width="800"/>  </p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_6_3_5.PNG" width="800"/>  </p>
 <h4 id="step-64-verify-cor-saas">Step 6.4 Verify CoR SaaS</h4>
 <p>Click <strong>Manage Cloud OnRamp for SaaS</strong> and select the Application to verify QoE status, DIA status, exit interface on each WAN Edge for SaaS application.    </p>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_6_4_1.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_6_4_1.PNG" width="800"/></p>
 <p><span style="background-color:lightblue"> <strong>Note: Your output may not match the screenshot on the vQoE score and DIA Status. This is expected.</strong>  </p>
 <ul>
 <li>
@@ -1070,7 +1070,7 @@ traceroute to 1.1.1.1 (1.1.1.1), 30 hops max, 60 byte packets
 <p>This lab doesn't have traffic impairment tool, we can't increase remote transport's latency or drop to trigger SaaS changes exit point. But if you keep checking the SaaS status, you will notice the vQoE score changes and exit interface changes.</p>
 </li>
 </ul>
-<p><img src="https://leitian123.github.io/holent2901/img/lab3_6_4_2.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab3_6_4_2.PNG" width="800"/></p>
 <hr />
 <h2 id="congratulation-you-have-completed-the-whole-lab">Congratulation! You have completed the whole lab.</h2>
 <p><a href="JAVASCRIPT:scroll(0,0)" style="color:blue">Back to Top</a></p>
