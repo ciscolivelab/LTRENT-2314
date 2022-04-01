@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Lab 3 Tasks - HOLENT-2314 Advanced SD-WAN Lab</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Lab 3 Tasks";
+    var mkdocs_page_input_path = "lab3.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> HOLENT-2314 Advanced SD-WAN Lab</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="..#preface">Preface</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="..#audience">Audience</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="..#speakers">Speakers</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Lab Guide</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../access/">Lab Access</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../access/#lab-flow">Lab Flow</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../access/#lab-access">Lab Access</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../access/#lab-topology">Lab Topology</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../intro2/">Getting Started</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../intro2/#lab-design">Lab Design</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../intro2/#lab-access">Lab Access</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../intro2/#lab-access-without-anyconnect-vpn">Lab Access without AnyConnect VPN</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../lab1/">Lab 1 Tasks</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../lab1/#task-1-local-route-policy">Task 1: Local Route Policy</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-11-verification-of-the-routes-received-on-dc-wes">Step 1.1 Verification of the routes received on DC WEs.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-12-verify-the-bgp-communities">Step 1.2 Verify the BGP communities.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-13-set-the-omp-tag-for-dc-specific-routes">Step 1.3 set the OMP tag for DC specific Routes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-14-creating-a-local-policy">Step 1.4 Creating a Local Policy</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-15-apply-the-route-policy">Step 1.5 Apply the route-policy</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-16-verify-omp-tags">Step 1.6 Verify OMP Tags</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../lab1/#task-2-hub-spoke-topologies">Task 2: Hub &amp; Spoke Topologies</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-21-pre-config-verifications">Step 2.1. Pre-config verifications</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-22-create-a-topology-for-centralized-policy">Step 2.2. Create a topology for centralized policy</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-23-apply-the-topology-policy-to-centralized-policy">Step 2.3. Apply the topology policy to Centralized Policy</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-24-activate-the-first-centralized-policy">Step 2.4. Activate the first Centralized Policy</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-25-verify-the-hub-spoke-topology">Step 2.5. Verify the hub &amp; spoke topology</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../lab1/#task-3-default-route-handling">Task 3: Default Route handling</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-31-new-central-policy">Step 3.1.  New Central Policy</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-32-edit-the-new-topology-policy">Step 3.2. Edit the new topology policy.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-33-apply-the-policy">Step 3.3. Apply the policy</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-34-verify-change-of-default-route">Step 3.4. Verify change of default route</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-35-create-new-topology">Step 3.5. Create new topology</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-36-verify">Step 3.6. Verify</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-37-create-topology-policy-for-remote2">Step 3.7. Create topology policy for Remote2</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../lab1/#task-4-specific-routes-handling">Task 4: Specific Routes handling</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-41-modify-topology-policy-for-remote1">Step 4.1: Modify Topology policy for remote1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-42-configure-16-paths-ecmp">Step 4.2: Configure 16 paths ECMP</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-43-verification">Step 4.3: Verification</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-44-modify-topology-policy-for-remote2">Step 4.4: Modify Topology policy for remote2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-45-verification">Step 4.5: Verification</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../lab1/#this-concludes-the-routing-handling-for-the-specific-routes">This concludes the routing handling for the specific routes.</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../lab1/#task-5-application-aware-routing">Task 5: Application Aware Routing</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-51-configure-the-rh-lte-interface-be-used-only-when-all-other-circuits-are-unavailable">Step 5.1: Configure the RH LTE interface be used only when all other circuits are unavailable.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-52-last-resort-verification">Step 5.2: Last-Resort verification.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-53-configure-sla-classes-for-app-aware-routing-aar">Step 5.3: Configure SLA classes for app aware routing (AAR)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-54-apply-the-aar">Step 5.4: Apply the AAR</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../lab1/#step-55-lab-verification">Step 5.5: Lab Verification</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../lab2/">Lab 2 Tasks</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../lab2/#step1-verify-current-route">Step1: Verify current route</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../lab2/#step2-route-policy-for-remote2">Step2: Route policy for Remote2</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../lab2/#step3-route-policy-for-remote1">Step3: Route policy for Remote1</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Lab 3 Tasks</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#task-1-qos">Task 1: QoS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#step-11-class-map-and-applications">Step 1.1: class map and applications</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-12-central-data-policy-for-classification">Step 1.2: Central Data Policy for classification</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-13-local-qos-queuing-policy">Step 1.3: Local QoS queuing policy</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-14-apply-qos-queuing-policy">Step 1.4: Apply QoS queuing policy</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#task-2-per-tunnel-qos">Task 2: per-tunnel QoS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#step-21-configure-qos-policy-on-rh">Step 2.1: Configure QoS policy on RH</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-22-configure-hub-role-on-rh">Step 2.2: Configure Hub role on RH</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-23-configure-spoke-role-on-remotes">Step 2.3: Configure Spoke role on Remotes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-24-verify-per-tunnel-qos">Step 2.4: Verify per-tunnel QOS</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#task-3-on-demand-tunnel">Task 3: On-demand Tunnel</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#step-31-modify-central-control-policy">Step 3.1: Modify central control policy</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-32-configure-on-demand-tunnel">Step 3.2: Configure On-demand Tunnel</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-33-verify-on-demand-tunnel-between-remotes">Step 3.3: Verify On-demand Tunnel between remotes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#task-4-ipsec-tunnel-to-sig">Task 4: IPsec tunnel to SIG</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#step-41-manual-ipsec-tunnel-to-sig">Step 4.1 : Manual IPSec tunnel to SIG</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-42-verify-sig-tunnel">Step 4.2 : verify SIG tunnel</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#task-5-dia">Task 5: DIA</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#step-51-verify-route-to-internet">Step 5.1: verify route to internet</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-52-enable-nat-on-lte-transport">Step 5.2: Enable NAT on LTE transport</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-53-add-nat-route-on-vpn-1">Step 5.3: Add NAT route on VPN 1</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#task-6-cor-for-saas">Task 6: CoR for SaaS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#step-61-enable-cloud-onramp-for-saas">Step 6.1 Enable Cloud OnRamp for SaaS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-62-add-saas-application">Step 6.2 Add SaaS application</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-63-add-sites">Step 6.3 Add sites</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-64-verify-cor-saas">Step 6.4 Verify CoR SaaS</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#congratulation-you-have-completed-the-whole-lab">Congratulation! You have completed the whole lab.</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../survey/">Survey</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">HOLENT-2314 Advanced SD-WAN Lab</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Lab Guide &raquo;</li>
+        
+      
+    
+    <li>Lab 3 Tasks</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="lab-3-performance-optimization">Lab 3: Performance Optimization</h1>
+<hr />
+<p>In this section, you will help ACME to optimize their SD-WAN fabric. You will perform the following tasks in this lab.</p>
+<ul>
+<li>Add QoS and make sure consistent QoS policies are applied across the SD-WAN fabric.</li>
+<li>Regional hub has higher bandwidth on WAN circuits compare to remote sites. This bandwidth mismatch could potentially cause packet drops on remote sites. Configure the sd-wan fabric to prevent this potential issue.</li>
+<li>Due to the latency sensitive application requirement, a spoke to spoke tunnel is needed between remote sites. Configure the sd-wan fabric to build on-demand tunnel between remote sites.</li>
+<li>Cloud Application (16.16.16.16) requires inspection services for all users. Configure IPSec tunnel to SIG provider for inspection services and configure the sd-wan fabric to route all traffic to this application over a IPSec tunnel.  </li>
+<li>ACME wants to reduce the bandwidth consumption on private WAN links. Configure the sd-wan fabric to route public cloud and Internet traffic over local internet access.</li>
+<li>For SaaS application, configure the sd-wan fabric to use either local DIA or RH based on application performance.</li>
+</ul>
+<hr />
+<h2 id="task-1-qos">Task 1: QoS</h2>
+<p>Enabling QoS has three main steps: classification, marking and queueing. Queueing policy is configured as Localized policy and applied on interface level. classification and marking can be enabled over Localized policy or over centralized data policy. ACME requires consistent QoS policies across sd-wan fabric, you will use centralized data policy to achieve that.</p>
+<p>ACME uses 4-class QoS model with the following policy requirements.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Applications</th>
+<th>DSCP Value</th>
+<th>Queueing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>REALTIME</strong></td>
+<td>Real Time Protocol,webex,zoom</td>
+<td>46</td>
+<td>30%</td>
+</tr>
+<tr>
+<td><strong>SIGNALING</strong></td>
+<td>rtcp,mgcp,sip</td>
+<td>24</td>
+<td>10%</td>
+</tr>
+<tr>
+<td><strong>CRITICAL</strong></td>
+<td>SSH,SNMP,SMB</td>
+<td>26</td>
+<td>40%</td>
+</tr>
+<tr>
+<td><strong>DEFAULT</strong></td>
+<td></td>
+<td>0</td>
+<td>20%</td>
+</tr>
+</tbody>
+</table>
+<h4 id="step-11-class-map-and-applications">Step 1.1: class map and applications</h4>
+<ul>
+<li>
+<p>Login to vManage <strong>198.18.133.200</strong> and access policy configuration from <strong>Configuration - Policies</strong></p>
+</li>
+<li>
+<p>Click <strong>Custom Options</strong> drop down on the top right and select <strong>Lists</strong> under <strong>Localized Policy</strong></p>
+</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_1_1.PNG" width="800"/>  </p>
+<ul>
+<li>Click <strong>Class Map</strong> list type on the left and add <strong>New Class List</strong>. In the pop up window enter <strong>REALTIME</strong> in Class filed, and select <strong>0</strong> from Queue dropdown.</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_1_2.PNG" width="800"/>  </p>
+<ul>
+<li>After save <strong>REALTIME</strong> class, add following three classes.</li>
+<li>Class: <strong>SIGNALING</strong>  Queue: <strong>1</strong></li>
+<li>Class: <strong>DEFAULT</strong>  Queue: <strong>2</strong></li>
+<li>Class: <strong>CRITICAL</strong> Queue: <strong>3</strong></li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_1_3.PNG" width="800"/></p>
+<ul>
+<li>Click <strong>Custom Options</strong> drop down on the top right and select <strong>Lists</strong> under <strong>Centralized Policy</strong></li>
+<li>Click <strong>Application</strong> list type on the left and add <strong>New Application List</strong>. In the application configure window enter <strong>REALTIME</strong> in Application List Name, and select "<strong>RTP(Real Time Protocol)</strong>, <strong>WebEX</strong>, <strong>Zoom</strong>" from Application drop list.</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_1_5.PNG" width="800"/></p>
+<ul>
+<li>After save "REALTIME" Application, add following two Applications</li>
+<li>Application List Name: <strong>SIGNALING</strong> Application: <strong>Real Time Control Protocol, Media Gateway Control Protocol, Session Initiation Protocol</strong></li>
+<li>Application List Name: <strong>CRITICAL</strong> Application: <strong>Secure Shell, SImple Network Management Protocol, SMB</strong></li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_1_6.PNG" width="800"/></p>
+<h4 id="step-12-central-data-policy-for-classification">Step 1.2: Central Data Policy for classification</h4>
+<ul>
+<li>
+<p>Login to vManage <strong>198.18.133.200</strong> and access policy configuration from <strong>Configuration - Policies</strong></p>
+</li>
+<li>
+<p>Click <strong>Custom Options</strong> drop down on the top right and select <strong>Traffic Policy</strong> under <strong>Centralized Policy</strong></p>
+</li>
+<li>
+<p>Select <strong>Traffic Data</strong> and select Add Policy to <strong>Create New</strong> data policy</p>
+</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_2_1.PNG" width="800"/></p>
+<ul>
+<li>Enter <strong>Lab_QoS_v01</strong> in <strong>Name</strong> and <strong>Description</strong></li>
+<li>Click <strong>+Sequence Type</strong> and select <strong>QoS</strong> for new data policy type</li>
+<li>Add <strong>+Sequence Rule</strong> for following Match Conditions and Actions<ul>
+<li>Application/Application Family List: <strong>REALTIME</strong>, Action <strong>Accept</strong> and Forwarding Class: <strong>REALTIME</strong></li>
+<li>Application/Application Family List: <strong>SIGNALING</strong>, Action <strong>Accept</strong> and Forwarding Class: <strong>SIGNALING</strong>    </li>
+<li>Application/Application Family List: <strong>CRITICAL</strong>, Action <strong>Accept</strong> and Forwarding Class: <strong>CRITICAL</strong></li>
+<li>Default Match Conditions (match any): Forwarding Class: <strong>DEFAULT</strong></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_2_2.PNG" width="800"/></p>
+<ul>
+<li>After <strong>Save Data Policy</strong>, go back to the <strong>Centralized Policy</strong> configuration and edit central policy <strong>LAB_Central_V02</strong></li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_2_3.PNG" width="800"/></p>
+<ul>
+<li>Click <strong>Traffic Rules</strong> tab on the top then click <strong>Traffic Data</strong> and select <strong>Import Existing</strong> to add QoS data policy <strong>Lab_QoS_v01</strong></li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_2_4.PNG" width="800"/></p>
+<ul>
+<li>Click <strong>Policy Application</strong> tab on the top then click <strong>Traffic Data</strong> to assign the qos data policy.</li>
+<li>To have consistent QoS policy for the fabric, We will apply the QoS policy to all sites and all VPNs on service side as show in below screenshot.</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_2_5.PNG" width="800"/></p>
+<ul>
+<li>Click <strong>Add</strong> and <strong>Save Policy Changes</strong> then <strong>Active</strong> the updated central policy.   </li>
+</ul>
+<h4 id="step-13-local-qos-queuing-policy">Step 1.3: Local QoS queuing policy</h4>
+<ul>
+<li>
+<p>Login to vManage <strong>198.18.133.200</strong> and access policy configuration from <strong>Configuration - Policies</strong></p>
+</li>
+<li>
+<p>Click <strong>Custom Options</strong> drop down on the top right and select <strong>forwarding Class/QoS</strong> under <strong>Localized Policy</strong></p>
+</li>
+<li>
+<p>Select <strong>QoS Map</strong> and select <strong>Add QoS Map</strong> to create new queuing policy <strong>Lab_QoS_Map_v01</strong></p>
+</li>
+<li>Click <strong>Add Queue</strong> to add policy for <strong>SIGNALING</strong> class as show below.</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_3_1.PNG" width="800"/></p>
+<ul>
+<li>Click <strong>Add Queue</strong> to add policy for <strong>CRITICAL</strong> class as show below</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_3_2.PNG" width="800"/>   </p>
+<ul>
+<li>
+<p>Click <strong>Add Queue</strong> to add policy for <strong>DEFAULT</strong> class as show below</p>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_3_3.PNG" width="800"/></p>
+</li>
+<li>
+<p>The QoS queuing policy will look similar to screenshot below.</p>
+</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_3_4.PNG" width="800"/></p>
+<ul>
+<li>After queuing policy is created, save the queueing policy. Then you will create localized policy that includes the queueing policy.</li>
+</ul>
+<p><span style="background-color:lightblue"> <strong>Note: To save time, We will only create local policy for remote sites in this lab.</strong></p>
+<ul>
+<li>Click <strong>Localized Policy</strong> tab and <strong>Add Policy</strong></li>
+<li>Click <strong>Next</strong> move to <strong>configure Forwarding Classes/QoS</strong></li>
+<li>Click <strong>Add QoS Map</strong> drop down and select import existing. Search <strong>Lab_QoS_Map_v01</strong> and Import.</li>
+<li>Click next proceeding to Policy Overview. Type <strong>LAB_Remote_Local_v01</strong> in Policy Name and Description filed.</li>
+<li>Check <strong>Netflow</strong> and <strong>Application</strong> at the bottom from Policy Settings and <strong>Save Policy</strong></li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_3_5.PNG" width="800"/></p>
+<h4 id="step-14-apply-qos-queuing-policy">Step 1.4: Apply QoS queuing policy</h4>
+<p>Applying QoS queuing policy is two step process, first you need to associate the localized policy to the device template, and next you need reference the queueing policy-map on transport interface.</p>
+<ul>
+<li>Access template configuration from <strong>Configuration - Templates</strong></li>
+<li>Under <strong>Device</strong> template tab, locate template <strong>Lab_R1_V01</strong> and select <strong>Edit</strong></li>
+<li>Associate <strong>Lab_Remote_VPN1_V01</strong> localized policy to the template as show below</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_4_1.PNG" width="800"/></p>
+<ul>
+<li>Click <strong>Update</strong> to push the new localized policy configuration.</li>
+<li>Repeat the above steps to associate policy for template <strong>Lab_R2_V01</strong></li>
+</ul>
+<p>Now you have the localized policy associated with device template for both remotes. Next you need reference the queueing policy on transport interfaces.</p>
+<ul>
+<li>Access template configuration from <strong>Configuration - Templates</strong></li>
+<li>Under <strong>Feature</strong> template tab, locate template <strong>Lab_Remote_VPN0_Private1_v01</strong> and select <strong>Edit</strong></li>
+<li>Under ACL/QOS section, hardcode <strong>Lab_QoS_Map_v01</strong> for QoS Map field.</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_1_4_2.PNG" width="800"/></p>
+<ul>
+<li>click update to push configuration change.</li>
+<li>Repeat the above steps to update   <strong>Lab_Remote_VPN0_Private2_V01</strong> and <strong>Lab_Remote_VPN0_LTE_V01</strong> feature templates.</li>
+<li>After queuing policy is applied on both transport interfaces, you can verify the QoS policy from CLI using command <code>show policy-map interface</code></li>
+</ul>
+<pre><code>R2-WE1#show policy-map interface GigabitEthernet 2
+ GigabitEthernet2
+
+  Service-policy output: Lab_QoS_Map_v01
+
+    queue stats for all priority classes:
+      Queueing
+      priority level 1
+      queue limit 512 packets
+      (queue depth/total drops/no-buffer drops) 0/0/0
+      (pkts output/bytes output) 22647/6060238
+
+    Class-map: Queue0 (match-any)
+      22647 packets, 6060238 bytes
+      30 second offered rate 15000 bps, drop rate 0000 bps
+      Match: qos-group 0
+      police:
+          rate 30 %
+          rate 300000000 bps, burst 9375000 bytes
+        conformed 22647 packets, 6060238 bytes; actions:
+          transmit
+        exceeded 0 packets, 0 bytes; actions:
+          drop
+        conformed 15000 bps, exceeded 0000 bps
+      Priority: Strict, b/w exceed drops: 0
+
+      Priority Level: 1
+
+    Class-map: Queue1 (match-any)
+      0 packets, 0 bytes
+      30 second offered rate 0000 bps, drop rate 0000 bps
+      Match: qos-group 1
+      Queueing
+      queue limit 1041 packets
+      (queue depth/total drops/no-buffer drops) 0/0/0
+      (pkts output/bytes output) 0/0
+      bandwidth remaining ratio 10
+
+    Class-map: Queue3 (match-any)
+      10268 packets, 1197729 bytes
+      30 second offered rate 0000 bps, drop rate 0000 bps
+      Match: qos-group 3
+      Queueing
+      queue limit 1041 packets
+      (queue depth/total drops/no-buffer drops) 0/0/0
+      (pkts output/bytes output) 10268/1197729
+      bandwidth remaining ratio 40
+
+    Class-map: class-default (match-any)
+      15 packets, 1609 bytes
+      30 second offered rate 0000 bps, drop rate 0000 bps
+      Match: any
+      Queueing
+      queue limit 1041 packets
+      (queue depth/total drops/no-buffer drops) 0/0/0
+      (pkts output/bytes output) 15/1609
+      bandwidth remaining ratio 20
+        Exp-weight-constant: 9 (1/512)
+        Mean queue depth: 0 packets
+        class       Transmitted         Random drop      Tail drop          Minimum        Maximum     Mark
+                pkts/bytes            pkts/bytes       pkts/bytes          thresh         thresh     prob
+
+        0               1/349             0/0              0/0                260           520  1/10
+        1               0/0               0/0              0/0                292           520  1/10
+        2               0/0               0/0              0/0                325           520  1/10
+        3               0/0               0/0              0/0                357           520  1/10
+        4               0/0               0/0              0/0                390           520  1/10
+        5               0/0               0/0              0/0                422           520  1/10
+        6              14/1260            0/0              0/0                455           520  1/10
+        7               0/0               0/0              0/0                487           520  1/10
+</code></pre>
+<h2 id="task-2-per-tunnel-qos">Task 2: per-tunnel QoS</h2>
+<p>In this section, you will configure the RH WAN edge router (<strong>RH-WE1</strong>) to shape tunnel traffic to each remote. This per-tunnel QoS will make sure RH cannot send excessive traffic to remotes and overrun it.</p>
+<h4 id="step-21-configure-qos-policy-on-rh">Step 2.1: Configure QoS policy on RH</h4>
+<ul>
+<li>In task 1, you have configured QoS policy on remote sites. Follow the same steps to configure QoS policy on RH <strong>RH-WE1</strong>.</li>
+<li>Login to vManage <strong>198.18.133.200</strong> and access policy configuration from <strong>Configuration - Policies - Localized Policy</strong></li>
+<li>Copy policy <strong>LAB_Remote_Local_v01</strong> and name new policy <strong>LAB_RH_Local_v01</strong>.</li>
+<li>Access template configuration from <strong>Configuration - Templates</strong></li>
+<li>Locate device template <strong>Lab_RH_V01</strong> and attach localized policy <strong>LAB_RH_Local_v01</strong> to the device template.  </li>
+<li>Update following feature templates<ul>
+<li><strong>Lab_RH_VPN0_Private1_v01</strong></li>
+<li><strong>Lab_RH_VPN0_Private2_V01</strong></li>
+<li><strong>Lab_RH_VPN0_LTE_V01</strong>  </li>
+</ul>
+</li>
+<li>Under ACL/QOS section, hardcode <strong>Lab_QoS_Map_v01</strong> for QoS Map field.</li>
+</ul>
+<p><span style="background-color:Khaki"> <span style="background-color:lightblue"> <strong>Note: To avoid configuration push for each feature template update, you can make a copy for each feature template, update on new feature templates, then associate the new feature templates on device template.</strong>. </span></p>
+<h4 id="step-22-configure-hub-role-on-rh">Step 2.2: Configure Hub role on RH</h4>
+<ul>
+<li>Access template configuration from <strong>Configuration - Templates</strong></li>
+<li>Under <strong>Feature</strong> template tab, locate template <strong>Lab_RH_VPN0_Private1_v01</strong> and select <strong>Edit</strong>  </li>
+<li>Configure teh following under <strong>TUNNEL</strong> section<ul>
+<li>Select <strong>On</strong> for <strong>Per-tunnel QoS</strong> to enable per-tunnel QoS</li>
+<li>Select <strong>On</strong> for <strong>Per-tunnel QoS Aggregator</strong> to set this as hub tunnel</li>
+<li>Configure <strong>Tunnel Bandwidth Percent</strong> to <strong>80</strong> to set maximum bandwidth usage for overlay traffic</li>
+</ul>
+</li>
+<li>Click update to push configuration change  </li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_2_2_1.PNG" width="800"/></p>
+<ul>
+<li>Locate feature template <strong>Lab_RH_VPN0_Private2_V01</strong>, and select <strong>Edit</strong>  </li>
+<li>Configure teh following under <strong>TUNNEL</strong> section<ul>
+<li>Select <strong>On</strong> for <strong>Per-tunnel QoS</strong> to enable per-tunnel QoS</li>
+<li>Select <strong>On</strong> for <strong>Per-tunnel QoS Aggregator</strong> to set this as hub tunnel</li>
+<li>Configure <strong>Tunnel Bandwidth Percent</strong> to <strong>80</strong> to set maximum bandwidth usage for overlay traffic  </li>
+</ul>
+</li>
+<li>Click update to push configuration change  </li>
+</ul>
+<h4 id="step-23-configure-spoke-role-on-remotes">Step 2.3: Configure Spoke role on Remotes</h4>
+<ul>
+<li>Access template configuration from <strong>Configuration - Templates</strong></li>
+<li>Under <strong>Feature</strong> template tab, locate template <strong>Lab_Remote_VPN0_Private1_v01</strong> and select <strong>Edit</strong></li>
+<li>Under <strong>TUNNEL</strong> section, configure <strong>On</strong> for <strong>Per-tunnel QoS</strong> to enable per-tunnel QoS. Since this is spoke, we will leave <strong>Per-tunnel QoS Aggregator</strong> off.</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_2_2_2.PNG" width="800"/></p>
+<ul>
+<li>To configure a device as spoke role, you will also need to configure the downstream bandwidth.</li>
+<li>In the same feature template <strong>Lab_Remote_VPN0_Private1_v01</strong>, under <strong>BASIC CONFIGURATION</strong> section</li>
+<li>Specify the downstream bandwidth to 10Mbps for remote1</li>
+<li>Click update to push configuration change  </li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_2_2_3.PNG" width="800"/></p>
+<ul>
+<li>locate template <strong>Lab_Remote_VPN0_Private2_v01</strong> and select <strong>Edit</strong></li>
+<li>
+<p>Under <strong>TUNNEL</strong> section, configure <strong>On</strong> for <strong>Per-tunnel QoS</strong> to enable per-tunnel QoS. Since this is spoke, we will leave <strong>Per-tunnel QoS Aggregator</strong> off.</p>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_2_2_2.PNG" width="800"/></p>
+</li>
+<li>
+<p>To configure a device as spoke role, you will also need to configure the downstream bandwidth.</p>
+</li>
+<li>In the same feature template <strong>Lab_Remote_VPN0_Private2_v01</strong>, under <strong>BASIC CONFIGURATION</strong> section</li>
+<li>Specify the downstream bandwidth to 20Mbps for remote2</li>
+<li>
+<p>Click update to push configuration change  </p>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_2_2_4.PNG" width="800"/>  </p>
+</li>
+</ul>
+<h4 id="step-24-verify-per-tunnel-qos">Step 2.4: Verify per-tunnel QOS</h4>
+<p>SSH into <strong>RH-WE1</strong>, run <code>show platform software sdwan qos policy</code> and <code>show platform software sdwan qos target</code> to verify per-tunnel QoS is working as configured.</p>
+<pre><code>RH-WE1#show platform software sdwan qos policy
+============ Session QoS Policy Database ============
+policy              bandwidth     remaining-ratio template
+SDWANPolicy4210704  10000000      1               Lab_QoS_Map_v01
+SDWANPolicy4210705  20000000      2               Lab_QoS_Map_v01
+
+</code></pre>
+<pre><code>RH-WE1#show platform software sdwan qos target
+============ Session QoS Target Database ============
+src-addr                 dst-addr                 sport   dport   proto remote-tloc     dummy-intf            tunnel         policy                bandwidth
+172.1.7.2                172.1.8.2                12346   12346   IPSEC 1.1.100.1       SDWANSession4210704   Tunnel1        SDWANPolicy4210704    10000
+172.2.6.2                172.2.7.2                12346   12346   IPSEC 1.1.102.1       SDWANSession4210705   Tunnel2        SDWANPolicy4210705    20000
+</code></pre>
+<p>From the show outputs, you can find the system creates two new Hierarchical QoS Policy Maps, one for each remote site. The parent level shaper rate is equal to the downstream bandwidth you configured in previous step.</p>
+<h2 id="task-3-on-demand-tunnel">Task 3: On-demand Tunnel</h2>
+<p>Hub and Spoke topology can reduce the CPU and memory usage on WAN Edge, but sometime a spoke to spoke tunnel is needed. Dynamic on-demand tunnel offers the benefits of having direct spoke to spoke tunnel while keep the low CPU and memory usage on WAN Edge.</p>
+<p>To improve latency of traffic between remotes, configure dynamic on-demand tunnel between remote1 and remote2.</p>
+<h4 id="step-31-modify-central-control-policy">Step 3.1: Modify central control policy</h4>
+<p>In Lab1 you have created hub and spoke topology for both remote sites. In order to create dynamic on-demand tunnel between remotes, first you need modify the topology policy to include a <strong>tloc-action backup</strong> action.</p>
+<ul>
+<li>
+<p>Login to vManage <strong>198.18.133.200</strong> and access policy configuration from <strong>Configuration - Policies</strong></p>
+</li>
+<li>
+<p>Click <strong>Custom Options</strong> drop down on the top right and select <strong>Topology</strong> under <strong>Centralized Policy</strong></p>
+</li>
+<li>
+<p>Highlight topology policy <strong>LAB_Topo_RS1_V02</strong> and select <strong>Edit</strong></p>
+</li>
+<li>Click <strong>TLOC</strong> from <strong>Sequence Type</strong> on the left</li>
+<li>
+<p>Click <strong>Sequence Rule</strong> to add a new rule; configure the rule to match on site list <strong>All-Remotes</strong>, Actions <strong>Accept</strong>. <strong>Save Match And Actions</strong> to add this new rule.</p>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_3_1_0.PNG" width="800"/></p>
+</li>
+<li>
+<p>Click <strong>Route</strong> from <strong>Sequence Type</strong> on the left</p>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_3_1_1.PNG" width="800"/></p>
+</li>
+<li>
+<p>Click <strong>Sequence Rule</strong> to add a new rule; configure the rule to match on site list <strong>All-Remotes</strong>, Actions TLOC list <strong>RH_TLOCs</strong> and TLOC Action <strong>Backup</strong>.</p>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_3_1_2.PNG" width="800"/></p>
+</li>
+<li>
+<p>After <strong>Save Match and And Actions</strong>, drag and drop the newly created rule to seq # 1.</p>
+</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_3_1_3.PNG" width="800"/></p>
+<ul>
+<li>
+<p>Click <strong>Save Control Policy</strong> to push policy update</p>
+</li>
+<li>
+<p>Follow the same steps to modify topology policy <strong>LAB_Topo_RS2_v02</strong>.</p>
+</li>
+</ul>
+<h4 id="step-32-configure-on-demand-tunnel">Step 3.2: Configure On-demand Tunnel</h4>
+<p>Enable Traffic Engineering service on RH to allow RH as backup path.</p>
+<ul>
+<li>Access template configuration from <strong>Configuration - Templates</strong></li>
+<li>Under <strong>Feature</strong> template tab, locate template <strong>Lab_RH_VPN0_v01</strong> and select <strong>Edit</strong></li>
+<li>Under <strong>SERVICE</strong> section, click <strong>New Service</strong> and select <strong>TE</strong> from service type drop down to add it to this feature template.</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_3_2_1.PNG" width="800"/></p>
+<ul>
+<li>Update to push configure change.</li>
+</ul>
+<p>On remote sites, R1-WE1 and R2-WE2, enable on-demand on system template.</p>
+<ul>
+<li>Under <strong>Feature</strong> template tab, locate template <strong>Lab_System_V01</strong> and select <strong>Copy</strong></li>
+<li>Name new system template <strong>Lab_Remote_System_V01</strong></li>
+<li>Edit <strong>Lab_Remote_System_V01</strong> to enable <strong>On-demand Tunnel</strong></li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_3_2_2.PNG" width="800"/></p>
+<ul>
+<li>
+<p>Locate device template <strong>Lab_R1_V01</strong> and change system template to <strong>Lab_Remote_System_V01</strong></p>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_3_2_3.PNG" width="800"/></p>
+</li>
+<li>
+<p>Update to push configuration change.</p>
+</li>
+<li>
+<p>Locate device template <strong>Lab_R2_V01</strong> and change system template to <strong>Lab_Remote_System_V01</strong>.</p>
+</li>
+<li>Update to push configuration change.</li>
+</ul>
+<h4 id="step-33-verify-on-demand-tunnel-between-remotes">Step 3.3: Verify On-demand Tunnel between remotes</h4>
+<p>You can verify the dynamic tunnel between remotes from vManage.</p>
+<ul>
+<li>Login to vManage <strong>198.18.133.200</strong> and access <strong>Monitor - Network</strong></li>
+<li>Select WAN-Edge <strong>R1-WE1</strong></li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_3_3_1.PNG" width="800"/></p>
+<ul>
+<li>Click <strong>Real Time</strong> and type in <strong>on demand local</strong> in <strong>Device Options</strong> filed</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_3_3_2.PNG" width="800"/></p>
+<ul>
+<li>The output shows local on demand tunnel is enabled and status is active.</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_3_3_3.PNG" width="800"/></p>
+<ul>
+<li>Type in <strong>on demand remote</strong> in <strong>Device Options</strong> filed    </li>
+<li>The output shows remote on demand tunnel to remote2 <strong>1.1.102.1</strong> is enabled and tunnel status is <strong>inactive</strong></li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_3_3_4.PNG" width="800"/></p>
+<ul>
+<li>Dynamic on demand tunnel is triggered by traffic between the local and remote sites. That's why you see status of on demand remote is inactive. Let's generate bi-directional traffic between remote1 and remote2 to trigger on demand tunnel.</li>
+<li>ssh into <strong>R1-VM1</strong> (the Ubuntu host), and run <code>ssh 10.10.102.10</code> to login <strong>R2-VM2</strong> with credential <strong>viptela/viptela</strong></li>
+</ul>
+<pre><code>Welcome to Ubuntu 16.04.2 LTS (GNU/Linux 4.8.0-36-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+689 packages can be updated.
+475 updates are security updates.
+Last login: Mon Feb  8 09:22:21 2021 from 10.16.22.163
+viptela@remote1_ubuntu:~$ ssh 10.10.102.10
+viptela@10.10.102.10's password:
+Welcome to Ubuntu 16.04.2 LTS (GNU/Linux 4.8.0-36-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+711 packages can be updated.
+521 updates are security updates.
+Last login: Mon Feb  8 09:25:00 2021 from 10.10.101.10
+viptela@remote2_ubuntu:~$
+</code></pre>
+<ul>
+<li>Go back to <strong>vManage - Monitor - Network - R1-WE1 - Real time</strong> and type in <strong>on demand remote</strong> in <strong>Device Options</strong> filed.</li>
+<li>
+<p>verify the tunnel status for on demand tunnel to remote2 <strong>1.1.102.1</strong> changes <strong>active</strong>      </p>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_3_3_5.PNG" width="800"/></p>
+</li>
+</ul>
+<h2 id="task-4-ipsec-tunnel-to-sig">Task 4: IPsec tunnel to SIG</h2>
+<p>Inspection service is required for traffic to cloud application with IP <strong>16.16.16.16</strong>. Configure remote1 and remote2 to build an IPSec tunnel to SIG provider. Route all traffic to <strong>16.16.16.16</strong> for inspection.</p>
+<h4 id="step-41-manual-ipsec-tunnel-to-sig">Step 4.1 : Manual IPSec tunnel to SIG</h4>
+<p>Before configuring the IPSec tunnel, verify the connectivity to Cloud application at <strong>16.16.16.16</strong> from remote ubuntu hosts. It is expected to see the application is not reachable.</p>
+<pre><code>
+viptela@remote1_ubuntu:~$ ping 16.16.16.16
+PING 16.16.16.16 (16.16.16.16) 56(84) bytes of data.
+
+</code></pre>
+<p>Configure IPSec tunnel on remote1 and remote2 to match the pre-configured tunnel at SIG provider.</p>
+<table>
+<thead>
+<tr>
+<th>site</th>
+<th>tunnel IP</th>
+<th>tunnel source</th>
+<th>tunnel destination</th>
+<th>IKE version</th>
+<th>pre-share key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Remote1</td>
+<td>172.4.101.1/24</td>
+<td>GigabitEthernet2</td>
+<td>172.3.2.2</td>
+<td>IKE v1</td>
+<td>cisco123</td>
+</tr>
+<tr>
+<td>Remote2</td>
+<td>172.4.102.1/24</td>
+<td>GigabitEthernet2</td>
+<td>172.3.2.2</td>
+<td>IKE v1</td>
+<td>cisco123</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Isakmp policy</strong></p>
+<pre><code>encryption algorithm:   AES - Advanced Encryption Standard (256 bit keys).
+hash algorithm:         Secure Hash Standard
+authentication method:  Pre-Shared Key
+Diffie-Hellman group:   #16 (4096 bit)
+lifetime:               14400 seconds, no volume limit
+</code></pre>
+<p><strong>IPSec policy</strong></p>
+<pre><code>Security association lifetime:3600 seconds
+PFS (Y/N): Y
+DH group:  group16
+Mixed-mode : Disabled
+Transform sets=esp-aes esp-sha-hmac
+Antireplay window size = 512
+</code></pre>
+<ul>
+<li>Login to vManage <strong>198.18.133.200</strong> and access template configuration from <strong>Configuration - Templates - Feature</strong></li>
+<li>Add new IPsec interface feature template for CSR1000v as show below</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_4_1_1.PNG" width="800"/></p>
+<ul>
+<li>Configure the template with following fields and leave other fields as default value</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>filed name</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Template Name</td>
+<td>Lab_IPsec_Int_V01</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Lab_IPsec_Int_V01</td>
+</tr>
+<tr>
+<td>Shutdown</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Interface Name</td>
+<td>ipsec1</td>
+</tr>
+<tr>
+<td>IPv4 address</td>
+<td>ipsec_tun_ip</td>
+</tr>
+<tr>
+<td>source</td>
+<td>Interface</td>
+</tr>
+<tr>
+<td>IPsec Source Interface</td>
+<td>GigabitEthernet2</td>
+</tr>
+<tr>
+<td>IPsec Destination IP Address</td>
+<td>172.3.2.2</td>
+</tr>
+<tr>
+<td>Preshared Key</td>
+<td>cisco123</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_4_1_2.PNG" width="800"/></p>
+<ul>
+<li>Add tunnel feature template <strong>Lab_IPsec_Int_V01</strong> to device template <strong>Lab_R1_V01</strong> and <strong>Lab_R2_V01</strong></li>
+<li>Locate device template <strong>Lab_R1_V01</strong> click Edit</li>
+<li>Add <strong>Lab_IPsec_Int_V01</strong> under VPN0</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_4_1_3.PNG" width="800"/></p>
+<ul>
+<li>Click save to update and filed in <strong>172.4.101.1/24</strong> for tunnel IP Address</li>
+<li>Click <strong>Update</strong> to configure device</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_4_1_4.PNG" width="800"/></p>
+<ul>
+<li>Locate device template <strong>Lab_R2_V01</strong> click Edit</li>
+<li>Add <strong>Lab_IPsec_Int_V01</strong> under VPN0</li>
+<li>Click save to update and filed in <strong>172.4.102.1/24</strong> for tunnel IP Address</li>
+<li>Click <strong>Update</strong> to configure device</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_4_1_5.PNG" width="800"/></p>
+<ul>
+<li>The ipsec tunnel will come <strong>UP</strong> on both remote sites. You can verify the tunnel status from <strong>show ip interface brief</strong></li>
+</ul>
+<pre><code>R2-WE1#sh ip int b
+Interface              IP-Address      OK? Method Status                Protocol
+GigabitEthernet1       172.2.7.2       YES other  up                    up
+GigabitEthernet2       172.3.9.7       YES DHCP   up                    up
+GigabitEthernet3       unassigned      YES other  down                  down
+GigabitEthernet4       10.10.102.1     YES other  up                    up
+GigabitEthernet5       unassigned      YES other  down                  down
+GigabitEthernet6       unassigned      YES other  down                  down
+GigabitEthernet7       unassigned      YES other  down                  down
+GigabitEthernet8       192.168.150.19  YES other  up                    up
+Sdwan-system-intf      1.1.102.1       YES unset  up                    up
+Loopback65528          192.168.1.1     YES other  up                    up
+NVI0                   unassigned      YES unset  up                    up
+Tunnel1                172.2.7.2       YES TFTP   up                    up
+Tunnel2                172.3.9.7       YES TFTP   up                    up
+Tunnel100001           172.4.102.1     YES other  up                    up
+R2-WE1#
+</code></pre>
+<pre><code>R1-WE1#sh ip int b
+Interface              IP-Address      OK? Method Status                Protocol
+GigabitEthernet1       172.1.8.2       YES other  up                    up
+GigabitEthernet2       172.3.8.7       YES DHCP   up                    up
+GigabitEthernet3       10.10.101.1     YES other  up                    up
+GigabitEthernet4       unassigned      YES other  down                  down
+GigabitEthernet5       unassigned      YES other  down                  down
+GigabitEthernet6       unassigned      YES other  down                  down
+GigabitEthernet7       unassigned      YES other  down                  down
+GigabitEthernet8       192.168.150.16  YES other  up                    up
+Sdwan-system-intf      1.1.100.1       YES unset  up                    up
+Loopback65528          192.168.1.1     YES other  up                    up
+NVI0                   unassigned      YES unset  up                    up
+Tunnel1                172.1.8.2       YES TFTP   up                    up
+Tunnel2                172.3.8.7       YES TFTP   up                    up
+Tunnel100001           172.4.101.1     YES other  up                    up
+R1-WE1#
+</code></pre>
+<ul>
+<li>Next you need to route all traffic to cloud application <strong>16.16.16.16</strong> to the tunnel.<ul>
+<li>Locate feature template <strong>Lab_Remote_VPN1_V01</strong> and edit</li>
+<li>Under <strong>IPSEC ROUTE</strong> section, add <strong>New IPSEC Route</strong> with prefix <strong>16.16.16.16/32</strong> interface <strong>ipsec1</strong></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_4_1_6.PNG" width="800"/></p>
+<ul>
+<li>Click <strong>Add</strong> to add this ipsec route. Click update to push configure change to both remote sites.</li>
+</ul>
+<h4 id="step-42-verify-sig-tunnel">Step 4.2 : verify SIG tunnel</h4>
+<ul>
+<li>
+<p>VNC login <strong>R1-VM1</strong> and <strong>R2-VM1</strong> with credential <strong>viptela</strong></p>
+</li>
+<li>
+<p>Verify that you can ping <strong>16.16.16.16</strong> from the VM</p>
+</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_4_2_1.PNG" width="800"/></p>
+<ul>
+<li>Now try access <strong>http://16.16.16.16</strong> from browser. You should see this login page</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_4_2_2.PNG" width="800"/></p>
+<h2 id="task-5-dia">Task 5: DIA</h2>
+<p>There are two options to enable DIA.</p>
+<ul>
+<li>
+<p>Option 1: NAT DIA Route
+</n>
+  In this option, a NAT route is configured under service VPN. You can direct local internet traffic from service VPN to transport VPN.</p>
+</li>
+<li>
+<p>Option 2: Centralized data policy
+  </n>
+  In this option, a centralized policy is applied to service side traffic based on ip prefixes, a match will redirect to transport VPN. Traffic that doesnt match the policy will stay in service VPN and route over IPSec tunnel.</p>
+</li>
+</ul>
+<p>In this task, you are going to configure DIA on remote sites using option 1.</p>
+<h4 id="step-51-verify-route-to-internet">Step 5.1: verify route to internet</h4>
+<ul>
+<li>ssh into remote1_ubuntu and run <code>traceroute 1.1.1.1</code></li>
+</ul>
+<pre><code>viptela@remote2_ubuntu:~$ traceroute 1.1.1.1
+traceroute to 1.1.1.1 (1.1.1.1), 30 hops max, 60 byte packets
+ 1  10.10.102.1 (10.10.102.1)  2.870 ms  2.772 ms  2.640 ms
+ 2  172-3-6-7.lightspeed.irvnca.sbcglobal.net (172.3.6.7)  10.756 ms 172-2-3-2.lightspeed.dybhfl.sbcglobal.net (172.2.3.2)  9.857 ms 172-3-6-7.lightspeed.irvnca.sbcglobal.net (172.3.6.7)  11.087 ms
+ 3  10.10.11.2 (10.10.11.2)  10.525 ms  11.484 ms  14.044 ms
+ 4  * * *
+ 5  * 198.18.128.1 (198.18.128.1)  15.788 ms *
+
+</code></pre>
+<ul>
+<li>From the traceroute you can tell host in remote1 currently route to DC for internet access</li>
+</ul>
+<h4 id="step-52-enable-nat-on-lte-transport">Step 5.2: Enable NAT on LTE transport</h4>
+<ul>
+<li>Login to vManage <strong>198.18.133.200</strong> and access template configuration from <strong>Configuration - Templates - Feature</strong></li>
+<li>locate template <strong>Lab_Remote_VPN0_LTE_V01</strong> and click <strong>...</strong> to select <strong>Edit</strong></li>
+<li>Under <strong>NAT</strong> section, change NAT checkbox to <strong>On</strong>. leave other fields as default.</li>
+<li>Click <strong>Update</strong> to push configure change.</li>
+</ul>
+<h4 id="step-53-add-nat-route-on-vpn-1">Step 5.3: Add NAT route on VPN 1</h4>
+<ul>
+<li>Login to vManage <strong>198.18.133.200</strong> and access template configuration from <strong>Configuration - Templates - Feature</strong></li>
+<li>Locate <strong>Lab_Remote_VPN1_V01</strong> and <strong>Edit</strong></li>
+<li>Under <strong>IPv4 ROUTE</strong>, click <strong>New IPv4 Route</strong><ul>
+<li>enter <strong>0.0.0.0/0</strong> for prefix</li>
+<li>select <strong>VPN</strong> for Gateway</li>
+<li>Select <strong>On</strong> for Enable VPN</li>
+</ul>
+</li>
+<li>Add this VPN route and update template to push configure change</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_5_2_1.PNG" width="800"/></p>
+<ul>
+<li>ssh into remote1_ubuntu and run <code>traceroute 1.1.1.1</code> to verify the change</li>
+</ul>
+<pre><code>viptela@remote1_ubuntu:~$ traceroute 1.1.1.1
+traceroute to 1.1.1.1 (1.1.1.1), 30 hops max, 60 byte packets
+ 1  10.10.101.1 (10.10.101.1)  2.745 ms  3.181 ms  3.098 ms
+ 2  172-3-8-1.lightspeed.miamfl.sbcglobal.net (172.3.8.1)  3.008 ms  3.867 ms  4.379 ms
+ 3  * * *
+ 4  198.18.128.1 (198.18.128.1)  13.176 ms * *
+
+</code></pre>
+<ul>
+<li>From the traceroute you can see the remote site now uses local DIA for internet bound traffic.</li>
+</ul>
+<h2 id="task-6-cor-for-saas">Task 6: CoR for SaaS</h2>
+<p>Instead of using the DIA exit point as configured in previous task, for SaaS application <strong>box and salesforce</strong>, ACME wants to use the most optimal path. Configure the remote sites to dynamically chose local DIA or regional hub as exit point for <strong>box and salesforce</strong> based on application performance.</p>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_6_0_0.png" width="800"/></p>
+<h4 id="step-61-enable-cloud-onramp-for-saas">Step 6.1 Enable Cloud OnRamp for SaaS</h4>
+<ul>
+<li>Login to vManage <strong>198.18.133.200</strong> and access <strong>Administration - Settings</strong></li>
+<li>Edit <strong>Cloud onRamp for SaaS</strong> and check <strong>Enabled</strong></li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_6_1_1.PNG" width="800"/></p>
+<h4 id="step-62-add-saas-application">Step 6.2 Add SaaS application</h4>
+<ul>
+<li>Access CoR SaaS configuration via <strong>Configuration - Cloud onRamp for SaaS</strong>  </li>
+<li>From <strong>Manage Cloud OnRamp for SaaS</strong> dropdown, select <strong>Applications and Policy</strong></li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_6_2_1.PNG" width="800"/></p>
+<ul>
+<li>Select <strong>Box</strong> and <strong>Salesforce</strong> from the application list; Select <strong>Enabled</strong> from Monitoring dropdown list; Enter <strong>1</strong> for VPN; Select <strong>Enabled</strong> for Policy/Cloud SLA dropdown list.</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_6_2_2.PNG" width="800"/></p>
+<ul>
+<li>Cloud OnRamp for SaaS uses existing AAR policy, we will keep the system created policy for SaaS. Click <strong>Save Policy</strong> to activate the policy update.</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_6_2_3.PNG" width="800"/></p>
+<h4 id="step-63-add-sites">Step 6.3 Add sites</h4>
+<p>You are going to configure remote sites as DIA site, and Regional hub as gateway site. Remote sites will monitor the QoE score for local DIA via LTE transport, and also the QoE score for gateway site.</p>
+<ul>
+<li>Access CoR SaaS configuration via <strong>Configuration - Cloud onRamp for SaaS</strong>  </li>
+<li>Click <strong>Manage Cloud OnRamp for SaaS</strong> dropdown list on the upper left, and select <strong>Gateway</strong></li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_6_3_1.PNG" width="800"/></p>
+<ul>
+<li>Click <strong>Attach Gateways</strong>,  select <strong>RH-WE1</strong> and move it to <strong>selected Sites</strong>. Click <strong>Add interfaces to selected sites</strong>.</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_6_3_2.PNG" width="800"/></p>
+<ul>
+<li>In the pop up window, under <strong>Interface</strong> field select interface <strong>GigabitEthernet4</strong> from the list.</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_6_3_3.PNG" width="800"/></p>
+<ul>
+<li>Click <strong>Manage Cloud OnRamp for SaaS</strong> dropdown list on the upper left, and select <strong>DIA Sites</strong></li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_6_3_4.PNG" width="800"/></p>
+<ul>
+<li>Select <strong>Attach DIA Sites</strong>, select <strong>R1-WE1</strong> and <strong>R2-WE1</strong> and move it to <strong>selected Sites</strong>.       </li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_6_3_5.PNG" width="800"/>  </p>
+<h4 id="step-64-verify-cor-saas">Step 6.4 Verify CoR SaaS</h4>
+<p>Click <strong>Manage Cloud OnRamp for SaaS</strong> and select the Application to verify QoE status, DIA status, exit interface on each WAN Edge for SaaS application.    </p>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_6_4_1.PNG" width="800"/></p>
+<p><span style="background-color:lightblue"> <strong>Note: Your output may not match the screenshot on the vQoE score and DIA Status. This is expected.</strong>  </p>
+<ul>
+<li>
+<p>screenshot above shows both remote sites are using local DIA as exit point for box and Salesfoce SaaS application.</p>
+</li>
+<li>
+<p>This lab doesn't have traffic impairment tool, we can't increase remote transport's latency or drop to trigger SaaS changes exit point. But if you keep checking the SaaS status, you will notice the vQoE score changes and exit interface changes.</p>
+</li>
+</ul>
+<p><img src="https://leitian123.github.io/holent2901/img/lab3_6_4_2.PNG" width="800"/></p>
+<hr />
+<h2 id="congratulation-you-have-completed-the-whole-lab">Congratulation! You have completed the whole lab.</h2>
+<p><a href="JAVASCRIPT:scroll(0,0)" style="color:blue">Back to Top</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../survey/" class="btn btn-neutral float-right" title="Survey">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../lab2/" class="btn btn-neutral" title="Lab 2 Tasks"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../lab2/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../survey/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
