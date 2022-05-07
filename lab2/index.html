@@ -270,7 +270,7 @@
                 <h1 id="lab-2-route-to-the-legacy-site">Lab 2: Route to the legacy site</h1>
 <hr />
 <p>In this section, you will help ACME to configure routing between sd-wan remote sites and legacy non sd-wan site. The legacy site is connected to SP <strong>private1</strong> with OSPF as CE-PE protocol. Legacy site prefix <strong>10.11.1.0/24</strong> is advertised to <strong>private1</strong> PE router; DC WAN Edge routers are receiving this prefix from service side over BGP.</p>
-<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_0_1.png" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_0_1.png" width="1800"/></p>
 <p>To make sure traffic between sd-wan remotes and legacy site using optimal path, ACME requires</p>
 <ul>
 <li>
@@ -302,8 +302,8 @@
 <ul>
 <li>Run <code>traceroute 10.11.1.1</code> from both hosts as show in below screenshots</li>
 </ul>
-<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_1_1.PNG" width="800"/></p>
-<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_1_2.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_1_1.PNG" width="1800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_1_2.PNG" width="1800"/></p>
 <p>As show from the traceroute, ubuntu host from both remote sites are using DC as transit site to reach prefix <strong>10.11.1.0/24</strong> from legacy site.</p>
 <h2 id="step2-route-policy-for-remote2">Step2: Route policy for Remote2</h2>
 <p>The requirement for remote2 is to use DC as transit site and use transport <strong>private2</strong>. To achieve that, you can modify the central policy created in <strong>lab1</strong> to set higher OMP preference for prefix <strong>10.11.1.0/24</strong> from color <strong>private2</strong>.</p>
@@ -326,16 +326,16 @@
 <li>Click <strong>Save Match And Actions</strong> to save the rule</li>
 <li>Save Control Policy to Activate the change</li>
 </ul>
-<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_2_4.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_2_4.PNG" width="1800"/></p>
 <p><span style="background-color:Khaki"> <span style="background-color:lightblue"> <strong>Note: After save, move the new created rule above the catch all rule by drag and drop the sequence number left to the rule</strong>. </span></p>
 <ul>
 <li>SSH into <strong>R2-WE1</strong> and run <strong>show sdwan omp route vpn 1</strong>. Verify preference 200 is assigned to <strong>private2</strong> color for prefix <strong>10.11.1.0/24</strong></li>
 </ul>
-<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_2_5a.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_2_5a.PNG" width="1800"/></p>
 <ul>
 <li>Run <code>traceroute 10.11.1.1</code> again from Remote2 host and compare the path from previous output.</li>
 </ul>
-<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_2_5.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_2_5.PNG" width="1800"/></p>
 <h2 id="step3-route-policy-for-remote1">Step3: Route policy for Remote1</h2>
 <p>The requirement for remote1 is to use <strong>private1</strong> route directly to legacy site. To achieve that, you can leak prefix <strong>10.11.1.0/24</strong> from VPN0 into service VPN.</p>
 <p>SP <strong>private1</strong> uses OSPF as PE-CE routing protocol; create OSPF feature template and attach to R1-WE1 VPN0.</p>
@@ -343,20 +343,20 @@
 <li>Login to vManage <strong>198.18.133.200</strong> and access feature template from <strong>Configuration - Template</strong> then click <strong>Feature</strong></li>
 <li>Click <strong>Add Template</strong>, pick <strong>CSR1000v</strong> under <strong>Select Devices</strong> and select Cisco OSPF template as show below.</li>
 </ul>
-<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_3_1.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_3_1.PNG" width="1800"/></p>
 <ul>
 <li>Name the template: <strong>Lab_OSPF_VPN0_V01</strong></li>
 <li>Assign Router ID: <strong>1.1.100.1</strong></li>
 </ul>
-<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_3_2.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_3_2.PNG" width="1800"/></p>
 <ul>
 <li>Add <strong>connected</strong> as protocol under <strong>REDISTRIBUTE</strong> section</li>
 </ul>
-<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_3_2b.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_3_2b.PNG" width="1800"/></p>
 <ul>
 <li>Enable OSPF <strong>Area 0</strong> on interface GigabitEthernet1</li>
 </ul>
-<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_3_3.PNG" width="800"/>  </p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_3_3.PNG" width="1800"/>  </p>
 <p><strong>Note: Please make sure remove "/" from interface dropdown list, so the interface name matches GigabitEthernet1</strong></p>
 <ul>
 <li>
@@ -367,20 +367,20 @@
 </li>
 <li>Move to <strong>Transport &amp; Management VPN</strong> section, Add <strong>Cisco OSPF</strong> template and select <strong>Lab_OSPF_VPN0_V01</strong> from dropdown list.</li>
 </ul>
-<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_3_4.PNG" width="800"/>   </p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_3_4.PNG" width="1800"/>   </p>
 <ul>
 <li>Update the device template and trigger vManage to update R1-VE1 configuration.</li>
 <li>After vManage complete the configuration push, SSH into <strong>R1-WE1</strong> to verify new OSPF neighbor and routes learned from OSPF neighbor.</li>
 </ul>
-<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_3_5.PNG" width="800"/></p>
-<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_3_6.PNG" width="800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_3_5.PNG" width="1800"/></p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_3_6.PNG" width="1800"/></p>
 <p>Configure route leaking between VPN0 and service VPN, so R1-WE1 will use the OSPF route learned from VPN0 for prefix <strong>10.11.1.0/24</strong></p>
 <ul>
 <li>Login to vManage <strong>198.18.133.200</strong> and access feature template from <strong>Configuration - Template</strong> then click <strong>Feature</strong></li>
 <li>Locate existing template <strong>"Lab_Remote_VPN1_V01"</strong>. Click <strong>"..."</strong> for more option and select Edit.<ul>
 <li>Move to <strong>Global Route Leak</strong> section. Add OSPF under <strong>Add New Route Leak from Global VPN to Service VPN</strong> </n></li>
 <li>Add connected under <strong>Add New Route Leak from Service VPN to Global VPN</strong> </n>
- <img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_3_7.PNG" width="800"/>   </li>
+ <img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_3_7.PNG" width="1800"/>   </li>
 <li>Update the template to trigger configuration push from vManage to R1-WE1</li>
 </ul>
 </li>
@@ -389,15 +389,15 @@
 <ul>
 <li>SSH into R1-WE1 to verify route <strong>10.10.101.0/24</strong>being added in global route table</li>
 </ul>
-<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_3_8.PNG" width="800"/>  </p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_3_8.PNG" width="1800"/>  </p>
 <ul>
 <li>SSH into R1-WE1 to verify route <strong>10.11.1.0/24</strong> being added in VRF 1 route table. The SP prefixes <strong>172.1.x.0</strong> are also leaked into service VPN which can be limited from additional route policy in previous step.</li>
 </ul>
-<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_3_9.PNG" width="800"/>  </p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_3_9.PNG" width="1800"/>  </p>
 <ul>
 <li>Now let's verify the new route path from remote1 Ubuntu host. Run <code>traceroute 10.11.1.1</code> again from Remote1 host and compare the result from previous output.</li>
 </ul>
-<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_3_10.PNG" width="800"/>  </p>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_3_10.PNG" width="1800"/>  </p>
 <p><strong>Great! You've completed lab2.</strong></p>
 <p><a href="JAVASCRIPT:scroll(0,0)" style="color:blue">Back to Top</a></p>
               
