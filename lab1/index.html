@@ -469,22 +469,19 @@
 <li>Description: <strong>LAB topology for Remote Site 2</strong></li>
 <li>Click <strong>+Sequence Type</strong> then select <strong>Route</strong></li>
 <li>Click <strong>+Sequence Rule</strong>, leave unchanged under Match(means match all),</li>
-<li>Click <strong>Actions</strong> change Actions to <strong>Accept</strong> (we'll come back and do the route policy later).</li>
+<li>Click <strong>Actions</strong> change Actions to <strong>Accept</strong> (we'll come back and do the route policy later).
+<img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task2_topo_4.png" width="1800"//></li>
+<li>Click <strong>+Sequence Type</strong> then select <strong>TLOC</strong></li>
+<li>Click <strong>+Sequence Rule</strong>, select <strong>TLOC</strong> for March condition</li>
+<li>Under <strong>Match Conditions</strong>, selects <strong>DCs-BU2-TLOCs</strong> for <strong>TLOC List</strong> (this TLOC list has been pre-defined for you which includes all the TLOCs of DC1-WE2 and DC2-WE2)</li>
+<li>Click <strong>Actions</strong>, change Actions to <strong>Accept</strong></li>
+<li>Click <strong>Save Match And Actions</strong> to save the rule    </li>
+<li>Click <strong>+Sequence Rule</strong>, select <strong>TLOC</strong></li>
+<li>Under <strong>Match Conditions</strong>, selects <strong>RH-TLOCs</strong> for <strong>TLOC List</strong> (this TLOC list has been pre-defined for you which includes all the TLOCs of RH)</li>
+<li>Click <strong>Actions</strong>, change Actions to <strong>Accept</strong></li>
+<li>Click <strong>Save Match And Actions</strong> to save the rule    </li>
 </ul>
 </li>
-</ul>
-<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task2_topo_4.png" width="1800"//></p>
-<pre><code>- Click **+Sequence Type** then select **TLOC**
-- Click **+Sequence Rule**, select **TLOC** for March condition
-- Under **Match Conditions**, selects **DCs-BU2-TLOCs** for **TLOC List** (this TLOC list has been pre-defined for you which includes all the TLOCs of DC1-WE2 and DC2-WE2)
-- Click **Actions**, change Actions to **Accept**
-- Click **Save Match And Actions** to save the rule    
-- Click **+Sequence Rule**, select **TLOC**
-- Under **Match Conditions**, selects **RH-TLOCs** for **TLOC List** (this TLOC list has been pre-defined for you which includes all the TLOCs of RH)
-- Click **Actions**, change Actions to **Accept**
-- Click **Save Match And Actions** to save the rule
-</code></pre>
-<ul>
 <li>Then click save Control Policy.</li>
 </ul>
 <p>This policy effectively allows R2-WE1 to build tunnels to all the DCs-BU1 devices (DC1-WE2 and DC2-WE2) as well as RH. Nothing else is allowed as the default action is reject.</p>
