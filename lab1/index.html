@@ -429,6 +429,9 @@
 <h4 id="step-22-create-a-topology-for-centralized-policy"><strong>Step 2.2.</strong> Create a topology for centralized policy</h4>
 <ul>
 <li>
+<p>SSH to R1-WE1 &amp; R2-WE1 and run <code>show sdwan bfd sessions</code>command and verify bfd tunnels between R1-WE1 and R2-WE1</p>
+</li>
+<li>
 <p>Login to vManage <strong>198.18.133.200</strong> and access policy configuration from <strong>Configuration - Policies</strong></p>
 </li>
 <li>
@@ -484,7 +487,7 @@
 </li>
 <li>Then click save Control Policy.</li>
 </ul>
-<p>This policy effectively allows R2-WE1 to build tunnels to all the DCs-BU1 devices (DC1-WE2 and DC2-WE2) as well as RH. Nothing else is allowed as the default action is reject.</p>
+<p>This policy effectively allows R2-WE1 to build tunnels to all the DCs-BU2 devices (DC1-WE2 and DC2-WE2) as well as RH. Nothing else is allowed as the default action is reject.</p>
 <p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task2_topo_5.png" width="1800"//></p>
 <h4 id="step-23-apply-the-topology-policy-to-centralized-policy"><strong>Step 2.3.</strong> Apply the topology policy to Centralized Policy</h4>
 <ul>
@@ -492,7 +495,7 @@
 <li>Click <strong>Add Policy</strong> under <strong>Centralized Policy</strong></li>
 <li>Click next, you will see Configure Topology and VPN membership - Click <strong>Add topology</strong>, and select <strong>Import Existing Topology</strong></li>
 <li>Click <strong>Custom Control(Route and TLOC)</strong>, then select <strong>LAB_Topo_RS1</strong></li>
-<li>Click on Add Topology</li>
+<li>Click on Import to add Topology</li>
 <li>Follow the steps above to add topology <strong>LAB_Topo_RS2</strong> as well</li>
 </ul>
 <p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab_task2_topo_6.png" width="1800"//></p>

@@ -300,6 +300,11 @@
 </tbody>
 </table>
 <ul>
+<li>Run <code>route</code> command to verify <strong>default</strong> route is pointing to eth0 interface as shown below.</li>
+</ul>
+<p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_1_0.PNG" width="1800"/></p>
+<p><strong>Note</strong> If default route is missing on the VM, please run command <code>sudo route add default gw 10.10.102.1 eth0</code> to add default route.  </p>
+<ul>
 <li>Run <code>traceroute 10.11.1.1</code> from both hosts as show in below screenshots</li>
 </ul>
 <p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_1_1.PNG" width="1800"/></p>
@@ -374,6 +379,9 @@
 </ul>
 <p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_3_5.PNG" width="1800"/></p>
 <p><img src="https://ciscolivelab.github.io/HOLENT-2314/img/lab2_3_6.PNG" width="1800"/></p>
+<ul>
+<li>Repeat the above steps to add <strong>OSPF</strong> for template <strong>Lab_R2_V01</strong>. ( <strong>Note</strong> OSPF neighbor is not being configured for Remote2 in the lab)</li>
+</ul>
 <p>Configure route leaking between VPN0 and service VPN, so R1-WE1 will use the OSPF route learned from VPN0 for prefix <strong>10.11.1.0/24</strong></p>
 <ul>
 <li>Login to vManage <strong>198.18.133.200</strong> and access feature template from <strong>Configuration - Template</strong> then click <strong>Feature</strong></li>
