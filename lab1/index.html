@@ -1349,7 +1349,7 @@ then click Save Policy</li>
 <li>SSH to <strong>R2-WE1</strong> and run <code>show ip route vrf 1</code>. Now, the default route has two ECMP paths, one path for each DC.</li>
 </ul>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task3_routes_20.png" width="1800"//>
-- Do <code>show sdwan omp route vpn 1</code>.You will see that there are 4 paths in the OMP route table, however none of them is valid.</p>
+- Do <code>show sdwan omp route vpn 1</code>.You will see that there are 4 paths in the OMP route table, however one of them is invalid.</p>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task3_routes_21.png" width="1800"//></p>
 <h2 id="task-4-specific-routes-handling">Task 4: Specific Routes handling</h2>
 <p>ACME wants to prefer more specific routes originated from its DC and use the other DC as backup. For BU1 (R1-WE1), it only needs to learn the routes from BU1's Headend devices (DC1-WE1 and DC2-WE1); for BU2(R2-WE1), it onlys need to learn the routes from BU2's Headend devices.(DC1-WE2 and DC2-WE2).
@@ -1529,7 +1529,7 @@ You will see route 10.100.100.0/24 is learned from 1.1.10.1, and route 10.200.20
 <td align="center"><strong>Voice-and-Video</strong></td>
 <td align="center">2</td>
 <td align="center">45</td>
-<td align="center">100</td>
+<td align="center">30</td>
 </tr>
 <tr>
 <td align="center"><strong>Default</strong></td>
