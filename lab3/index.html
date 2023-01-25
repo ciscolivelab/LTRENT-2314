@@ -1096,7 +1096,7 @@
 <ul>
 <li>Access template configuration from <strong>Configuration - Templates</strong></li>
 <li>Under <strong>Feature</strong> template tab, locate template <strong>Lab_RH_VPN0_Private1_v01</strong> and select <strong>Edit</strong>  </li>
-<li>Configure teh following under <strong>TUNNEL</strong> section<ul>
+<li>Configure the following under <strong>TUNNEL</strong> section<ul>
 <li>Select <strong>On</strong> for <strong>Per-tunnel QoS</strong> to enable per-tunnel QoS</li>
 <li>Select <strong>On</strong> for <strong>Per-tunnel QoS Aggregator</strong> to set this as hub tunnel</li>
 <li>Configure <strong>Tunnel Bandwidth Percent</strong> to <strong>80</strong> to set maximum bandwidth usage for overlay traffic</li>
@@ -1278,8 +1278,7 @@ viptela@remote2_ubuntu:~$
 </code></pre></div>
 - Go back to <strong>vManage - Monitor - Network - R1-WE1 - Real time</strong> and type in <strong>on demand remote</strong> in <strong>Device Options</strong> filed.
 - verify the tunnel status for on demand tunnel to remote2 <strong>1.1.102.1</strong> changes <strong>active</strong>      </p>
-<pre><code>&lt;img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab3_3_3_5.PNG" width="1800"/&gt;
-</code></pre>
+<p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab3_3_3_5.PNG" width="1800"/></p>
 <h2 id="task-4-ipsec-tunnel-to-sig">Task 4: IPsec tunnel to SIG</h2>
 <p>Inspection service is required for traffic to cloud application with IP <strong>16.16.16.16</strong>. Configure remote1 and remote2 to build an IPSec tunnel to SIG provider. Route all traffic to <strong>16.16.16.16</strong> for inspection.</p>
 <h4 id="step-41-manual-ipsec-tunnel-to-sig">Step 4.1 : Manual IPSec tunnel to SIG</h4>
@@ -1483,13 +1482,14 @@ R1-WE1#
 <ul>
 <li>ssh into remote1_ubuntu and run <code>traceroute 1.1.1.1</code></li>
 </ul>
-<p><div class="highlight"><pre><span></span><code>viptela@remote2_ubuntu:~$ traceroute 1.1.1.1
+<p><div class="highlight"><pre><span></span><code>viptela@remote1_ubuntu:~$ traceroute 1.1.1.1
 traceroute to 1.1.1.1 (1.1.1.1), 30 hops max, 60 byte packets
- 1  10.10.102.1 (10.10.102.1)  2.870 ms  2.772 ms  2.640 ms
- 2  172-3-6-7.lightspeed.irvnca.sbcglobal.net (172.3.6.7)  10.756 ms 172-2-3-2.lightspeed.dybhfl.sbcglobal.net (172.2.3.2)  9.857 ms 172-3-6-7.lightspeed.irvnca.sbcglobal.net (172.3.6.7)  11.087 ms
- 3  10.10.11.2 (10.10.11.2)  10.525 ms  11.484 ms  14.044 ms
- 4  * * *
- 5  * 198.18.128.1 (198.18.128.1)  15.788 ms *
+ 1  10.10.101.1 (10.10.101.1)  1.753 ms  1.673 ms  1.609 ms
+ 2  172-3-7-7.lightspeed.irvnca.sbcglobal.net (172.3.7.7)  3.891 ms 172-1-7-2.lightspeed.hstntx.sbcglobal.net (172.1.7.2)  3.839 ms  4.544 ms
+ 3  10.10.30.1 (10.10.30.1)  4.864 ms  4.473 ms  6.396 ms
+ 4  172-3-7-1.lightspeed.irvnca.sbcglobal.net (172.3.7.1)  6.788 ms  7.029 ms  5.992 ms
+ 5  * * *
+ 6  198.18.128.1 (198.18.128.1)  8.579 ms  4.740 ms *
 </code></pre></div>
 - From the traceroute you can tell host in remote1 currently route to DC for internet access</p>
 <h4 id="step-52-enable-nat-on-lte-transport">Step 5.2: Enable NAT on LTE transport</h4>
