@@ -13,7 +13,7 @@
     
     
       
-        <title>Lab Introduction - LTRENT-2314 Advanced SD-WAN Lab</title>
+        <title>Getting Started - LTRENT-2314 Advanced SD-WAN Lab</title>
       
     
     
@@ -92,7 +92,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lab Introduction
+              Getting Started
             
           </span>
         </div>
@@ -191,12 +191,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -231,11 +233,59 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../intro2/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Getting Started
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lab-design" class="md-nav__link">
+    Lab Design
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-access" class="md-nav__link">
+    Lab Access
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -345,21 +395,21 @@
 
 <h1 id="lab-introduction">Lab Introduction</h1>
 <hr />
-<p>Company ACME is a multi-international company where it has branches world wide which include two Data Centers in San Jose and RTP and few regional hubs in different continents as well as remote branches world wide.</p>
+<p>Company ACME is a multi-international company where it has branches world wide which include two Data Centers in San Jose, RTP and few regional hubs in different continents as well as remote branches world wide.</p>
 <h2 id="lab-design">Lab Design</h2>
-<p>This lab is designed to help you understand various advanced routing features based upon a large multi-international company design. The lab is based on dcloud and simulating ACME's topology with 5 Wan Edges(wEdges). All the basic connectivity as well as feature templates, devices templates and some lists have been pre-configured for you. You should be able to go straight to those LAB tasks.</p>
+<p>This lab is designed to help you understanding various advanced Viptela SDWAN features based on a large multi-international company's design requirements. The lab is built with a NFV software to simulate ACME's topology running in dCloud. The basic connectivity, SDWAN feature templates, devices templates and some lists for policy are pre-configured for you.</p>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/HOLENT-2901.PNG" width="1200"/></p>
 <p>As shown in the above diagram:</p>
 <ul>
-<li>DC1 has two cEdges which connects to three transports</li>
-<li>DC2 has also two cEdges which connect to three transports as well</li>
-<li>RH(reginal hub) has one cEdge</li>
-<li>Both DC1-WEs and DC2-WEs are running eBGP with DC routers, BGP has been preconfigured for you.</li>
-<li>Remote1 has one cEdge connecting to private1 and LTE</li>
-<li>Remote2 has one cEdge connecting to private2 and LTE</li>
+<li>Both DC1 and DC2 have two cEdges which connect to three transports</li>
+<li>RH(reginal hub) has one cEdge which connects to three transports</li>
+<li>Both DC1-WEs and DC2-WEs are running eBGP with DC routers, BGP is pre-configured on the DC routers.</li>
+<li>Remote1 has one cEdge which connects to private1 and LTE transports</li>
+<li>Remote2 has one cEdge which connects to private2 and LTE transports</li>
 </ul>
 <h2 id="lab-access">Lab Access</h2>
-<p><strong>You will connect to 'Anyconnect url' using Cisco VPN AnyConnect client and with the username &amp; password as documented in below table.</strong></p>
+<p><strong>Please find yourself on the 'Attendee Name' in table below, then use Cisco VPN AnyConnect client to connect to 'Anyconnect url' with the username &amp; password assigned for your POD.</strong>
+<strong>Please let procotor knows if you can't find your name in the list below</strong></p>
 <table>
 <thead>
 <tr>
@@ -528,7 +578,7 @@
 </tbody>
 </table>
 <ul>
-<li>Connect to anyconnect VPN <strong>dcloud-rtp-anyconnect.cisco.com</strong> with the provided username and password.</li>
+<li>Connect to anyconnect VPN <strong>dcloud-lon-anyconnect.cisco.com</strong> with the provided username and password.</li>
 </ul>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab0_1_1_rtp.png" width="400"/></p>
 <ul>
@@ -552,6 +602,41 @@
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../access/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lab Access" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Lab Access
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../lab1/" class="md-footer__link md-footer__link--next" aria-label="Next: Lab 1 Tasks" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Lab 1 Tasks
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
