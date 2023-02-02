@@ -291,29 +291,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-11-verification-of-the-routes-received-on-dc-wes" class="md-nav__link">
-    Step 1.1 Verification of the routes received on DC WEs.
+  <a href="#step-11-verify-routes-received-on-dc-wes" class="md-nav__link">
+    Step 1.1 Verify routes received on DC WEs.
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-12-verify-the-bgp-communities" class="md-nav__link">
-    Step 1.2 Verify the BGP communities.
+  <a href="#step-12-verify-bgp-communities" class="md-nav__link">
+    Step 1.2 Verify BGP communities.
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-13-set-the-omp-tag-for-dc-specific-routes" class="md-nav__link">
-    Step 1.3 set the OMP tag for DC specific Routes
+  <a href="#step-13-set-omp-tag-for-dc-specific-routes" class="md-nav__link">
+    Step 1.3 Set OMP tag for DC specific Routes
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-14-creating-a-local-policy" class="md-nav__link">
-    Step 1.4 Creating a Local Policy
+  <a href="#step-14-create-dc-local-policy" class="md-nav__link">
+    Step 1.4 Create DC Local Policy
   </a>
   
 </li>
@@ -338,11 +338,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#task-2-hub-spoke-topologies" class="md-nav__link">
-    Task 2: Hub &amp; Spoke Topologies
+  <a href="#task-2-hub-spoke-topology" class="md-nav__link">
+    Task 2: Hub &amp; Spoke topology
   </a>
   
-    <nav class="md-nav" aria-label="Task 2: Hub &amp; Spoke Topologies">
+    <nav class="md-nav" aria-label="Task 2: Hub &amp; Spoke topology">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -634,29 +634,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-11-verification-of-the-routes-received-on-dc-wes" class="md-nav__link">
-    Step 1.1 Verification of the routes received on DC WEs.
+  <a href="#step-11-verify-routes-received-on-dc-wes" class="md-nav__link">
+    Step 1.1 Verify routes received on DC WEs.
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-12-verify-the-bgp-communities" class="md-nav__link">
-    Step 1.2 Verify the BGP communities.
+  <a href="#step-12-verify-bgp-communities" class="md-nav__link">
+    Step 1.2 Verify BGP communities.
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-13-set-the-omp-tag-for-dc-specific-routes" class="md-nav__link">
-    Step 1.3 set the OMP tag for DC specific Routes
+  <a href="#step-13-set-omp-tag-for-dc-specific-routes" class="md-nav__link">
+    Step 1.3 Set OMP tag for DC specific Routes
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-14-creating-a-local-policy" class="md-nav__link">
-    Step 1.4 Creating a Local Policy
+  <a href="#step-14-create-dc-local-policy" class="md-nav__link">
+    Step 1.4 Create DC Local Policy
   </a>
   
 </li>
@@ -681,11 +681,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#task-2-hub-spoke-topologies" class="md-nav__link">
-    Task 2: Hub &amp; Spoke Topologies
+  <a href="#task-2-hub-spoke-topology" class="md-nav__link">
+    Task 2: Hub &amp; Spoke topology
   </a>
   
-    <nav class="md-nav" aria-label="Task 2: Hub &amp; Spoke Topologies">
+    <nav class="md-nav" aria-label="Task 2: Hub &amp; Spoke topology">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -915,48 +915,48 @@
 
 <h1 id="lab-1-advanced-routing">Lab 1: Advanced Routing</h1>
 <hr />
-<p>In this section, you will help ACME on an advanced routing using both local and central policy. You will perform the following tasks.</p>
+<p>In this lab, you will help ACME on advanced routing using both local and central policy. You will perform the following tasks.</p>
 <ul>
 <li>
-<p>The ACME DC routers have already tagged all the routes originated from DC1 with BGP community of 65010:1000; all the routes originated from DC2 with BGP community of 65020:2000. <strong>Please configure a route-policy to ensure the default route (0.0.0.0/0) coming from both DCs is set with an OMP tag of 100.</strong> For DC1 routes, set an OMP tag of <strong>1000</strong>; for DC2 routes, set an OMP tag of <strong>2000</strong>. (Lab_Task 1)</p>
+<p>Lab_Task 1 - The ACME DC routers are pre-configured to tag all routes originated from DC1 with BGP community 65010:1000; all routes originated from DC2 with BGP community 65020:2000. <strong>Please configure a route-policy to ensure the default route (0.0.0.0/0) coming from both DCs is set with an OMP tag of 100.</strong> For DC1 routes, set an OMP tag of <strong>1000</strong>; for DC2 routes, set an OMP tag of <strong>2000</strong>.</p>
 </li>
 <li>
-<p>ACME wants to have a <strong>hub &amp; spoke topology between the Remote sites and DCs as well as between the Remote sites and Regional hubs</strong>. The Hub &amp; spoke topology will scale more by reducing the number of tunnels required on the devices. (Lab_Task 2)</p>
+<p>Lab_Task 2 - ACME wants to use <strong>hub &amp; spoke topology with both DCs and Regional hub as hub sites; all remotes as spoke site</strong>. The Hub &amp; spoke topology will help to scale better by reducing the number of tunnels required on WAN Edges.</p>
 </li>
 <li>
-<p>ACME has categorized their branches into multiple Business Units(BUs). In the Data Center (DC) sites, the headend WAN Edges(WEs) are also categorized into multiple BUs for the purpose of horizontal scaling in terms of throughputs, therefore remote site only needs to build tunnels to its respective DC hub WEs. <strong>Remote Site1 only needs to build tunnels to DC1-WE1 and DC2-WE1</strong>; <strong>Remote Site 2 only needs to build tunnels to DC1-WE2 and DC2-WE2</strong>.(Lab_Task 2)</p>
+<p>Lab_Task 2 - ACME has categorized the remote sites into multiple Business Units(BUs). In the Data Center (DC) sites, the headend WAN Edges(WEs) are also categorized into multiple BUs for the purpose of horizontal scaling in terms of throughputs, therefore remote site only needs to build tunnels to its respective DC hub WEs. <strong>Remote Site1 only needs to build tunnels to DC1-WE1 and DC2-WE1</strong>; <strong>Remote Site 2 only needs to build tunnels to DC1-WE2 and DC2-WE2</strong>.</p>
 </li>
 <li>
-<p>Remote sites receive a default route from both RH and DC, **DCs will be preferred and load shared. RH's default route will be used as backup for DCs. (Lab_Task 3)</p>
+<p>Lab_Task 3 - Remote sites receive a default route from both DCs and Regional Hub; <strong>Default route from DCs will be preferred and load shared. Default route from Regional Hub's will be used as backup for DCs.</strong></p>
 </li>
 <li>
-<p>Remotes sites receive more specific routes from both DCs, and <strong>routes originated from local DC are preferred</strong>. If one DC goes down, it will use the routes from another DC as backup. In another words, from remote sites perspective, previously tagged routes tagged with 1000 will prefer DC1; routes tagged with 2000 will prefer DC2.(Lab_Task 4)</p>
+<p>Lab_Task 4 - Remote sites receive DC specific routes from both DCs; <strong>Routes originated from local DC will be preferred with the other DC as backup</strong>. In another words, remote sites prefer DC1 routes (previously tagged with 1000) from DC1, prefer DC2 routes (previously tagged with 2000) from DC2.</p>
 </li>
 <li>
-<p>For remote sites to any other region, routes are forced to go through the DC’s functional hub. For <strong>remote site1, it goes through WE1 in DC1 and DC2</strong>; for <strong>remote site 2, it goes through WE2 in DC1 and DC2</strong>.(Lab_Task 4)</p>
+<p>Lab_Task 4 - For remote sites to any other region, routes are forced to go through the DC’s functional hub. For <strong>remote site1, it goes through WE1 in DC1 and DC2</strong>; for <strong>remote site 2, it goes through WE2 in DC1 and DC2.</strong></p>
 </li>
 </ul>
-<p><span style="background-color:lightblue"> <span style="background-color:lightblue"> <strong>Note: In these lab exercises, it's possible that there are multiple ways to achieve the requirements. The lab guide provides a detailed step by step instruction for each tasks. However you're welcome to solve it with your own solution. Just be mindful with the time.</strong> </span></p>
+<p><span style="background-color:lightblue"> <span style="background-color:lightblue"> <strong>Note: In these lab exercises, it's possible that there are multiple ways to achieve the requirements. The lab guide provides a detailed step by step instruction for each tasks. However you're welcome to use your own solution. Just be mindful with the time.</strong> </span></p>
 <h2 id="task-1-local-route-policy">Task 1: Local Route Policy</h2>
-<p>In this section, you are going to use localized policy to assign a <strong>tag</strong> for DC specific route as well as the default route. In a later section you are going to create policy based on the <strong>tag</strong>.</p>
-<h4 id="step-11-verification-of-the-routes-received-on-dc-wes"><strong>Step 1.1</strong> Verification of the routes received on DC WEs.</h4>
+<p>In this section, you are going to use localized policy to assign a <strong>tag</strong> for DC specific route as well as the default route. The assigned <strong>tag</strong> will be used in later tasks.</p>
+<h4 id="step-11-verify-routes-received-on-dc-wes"><strong>Step 1.1</strong> Verify routes received on DC WEs.</h4>
 <ul>
-<li>SSH to <strong>DC1-WE1, DC1-WE2, DC2-WE1,DC2-WE2</strong> and do <code>show ip route vrf 1</code> and make sure <strong>10.100.100.0/24, 10.200.200/24</strong> as well as <strong>0.0.0.0/0</strong> learned via BGP.</li>
+<li>SSH to <strong>DC1-WE1, DC1-WE2, DC2-WE1,DC2-WE2</strong> and do <code>show ip route vrf 1</code> and make sure <strong>10.100.100.0/24, 10.200.200/24</strong> as well as <strong>0.0.0.0/0</strong> are learned via BGP.</li>
 </ul>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task1_iproute.png" width="1800"//></p>
-<h4 id="step-12-verify-the-bgp-communities"><strong>Step 1.2</strong> Verify the BGP communities.</h4>
+<h4 id="step-12-verify-bgp-communities"><strong>Step 1.2</strong> Verify BGP communities.</h4>
 <ul>
-<li>10.100.100.0/24 should tag with 65010:1000; 10.200.200.0/24 should tag with 65020:2000. Execute <code>show ip bgp vpnv4 vrf 1 &lt;prefix&gt;</code> (10.100.100.0/24 and 10.200.200.0/24) on DC1-WE1,DC1-WE2 and DC2-WE1,DC2-WE2.</li>
+<li>Run <code>show ip bgp vpnv4 vrf 1 &lt;prefix&gt;</code> (10.100.100.0/24 and 10.200.200.0/24) on DC1-WE1,DC1-WE2 and DC2-WE1,DC2-WE2. Verify <code>10.100.100.0/24</code> is tagged with 65010:1000; verify <code>10.200.200.0/24</code> is tagged with 65020:2000.</li>
 </ul>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task1_bgpcommunity.png" width="1800"//></p>
-<h4 id="step-13-set-the-omp-tag-for-dc-specific-routes"><strong>Step 1.3</strong> set the OMP tag for DC specific Routes</h4>
+<h4 id="step-13-set-omp-tag-for-dc-specific-routes"><strong>Step 1.3</strong> Set OMP tag for DC specific Routes</h4>
 <ul>
 <li>Login to vManage <strong>https://198.18.133.200:8443</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
 <li>Click <strong>Custom Options</strong> drop down on the top right and select <strong>Route Policy</strong> under <strong>Localized Policy</strong></li>
 <li>
 <p>Click <strong>Add Route Policy</strong> to Create new</p>
 <ul>
-<li>Name: <strong>LAB_DCs_BGP_RP</strong>  (write down this name, it will be used later)</li>
+<li>Name: <strong>LAB_DCs_BGP_RP</strong></li>
 <li>Description: <strong>LAB_DCs_BGP_RP</strong></li>
 <li>Click <strong>+Sequence Type</strong> on the left then click <strong>+Sequence Rule</strong>, click Match, select <strong>Address</strong>, select <strong>default</strong>.</li>
 </ul>
@@ -964,7 +964,7 @@
 </ul>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task1_new_lp_1.png" width="1800"//></p>
 <ul>
-<li>Click <strong>Action</strong>, change to <strong>Accept</strong>, then select OMP tag, key in <strong>100</strong>, then save Match and Actions.</li>
+<li>Click <strong>Action</strong>, change to <strong>Accept</strong>, then select OMP tag, and type in <strong>100</strong>, then save Match and Actions.</li>
 </ul>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task1_new_lp_2.png" width="1800"//></p>
 <ul>
@@ -983,9 +983,9 @@
 <li>Then click on <strong>Save Route Policy</strong></li>
 </ul>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task1_new_lp_3.png" width="1800"//></p>
-<h4 id="step-14-creating-a-local-policy"><strong>Step 1.4</strong> Creating a Local Policy</h4>
+<h4 id="step-14-create-dc-local-policy"><strong>Step 1.4</strong> Create DC Local Policy</h4>
 <ul>
-<li>Login to vManage <strong>198.18.133.200</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
+<li>Login to vManage <strong>https://198.18.133.200:8443</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
 <li>Click on <strong>Localized Policy</strong>, then click on <strong>Add Policy</strong></li>
 </ul>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task1_new_lp_4.png" width="1800"//></p>
@@ -998,7 +998,7 @@
 <li>Policy Name: <strong>LAB_DCs_Local_policy</strong></li>
 <li>Policy Description: <strong>LAB_DCs_Local_policy</strong> .</li>
 <li>Check <strong>Netflow, Application</strong> and <strong>Implicit ACL Logging</strong>.</li>
-<li>Then click on Save Policy (Feel free to click Preview before save)</li>
+<li>Then click on <strong>Save Policy</strong> (Feel free to click Preview before save)</li>
 </ul>
 </li>
 </ul>
@@ -1037,20 +1037,20 @@
 <li>Change <strong>Policy Name</strong> changes to Global and set to <strong>LAB_DCs_BGP_RP</strong> (this was the name you wrote down earlier)</li>
 </ul>
 </li>
-<li>Then click on Save changes and Click on Update</li>
+<li>Click <strong>Save changes</strong> and Click on Update</li>
 </ul>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task1_bgp_ft_3.png" width="1800"//></p>
 <ul>
-<li>Then click Next and then Update. Feel free to review the config changes, then click Configure Devices, then check the Confirm configuration box and click on OK.</li>
+<li>Click Next and Update (Feel free to review the config changes) then click Configure Devices, then check the Confirm configuration box and click on OK.</li>
 </ul>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task1_bgp_ft_4.png" width="1800"//></p>
 <h4 id="step-16-verify-omp-tags"><strong>Step 1.6</strong> Verify OMP Tags</h4>
 <ul>
 <li>SSH to DC wEdge routers(<strong>DC1-WE1,DC1-WE2,DC2-WE1,DC2-WE2</strong>) and run <strong><code>show ip bgp vpnv4 vrf 1 &lt;prefix&gt;</code></strong> (10.100.100.0/24,10.200.200.0/24)</li>
-<li>You should see the proper OMP tags are now set to 1000 and 2000</li>
+<li>You should see the OMP tags are now set to 1000 and 2000</li>
 </ul>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task1_bgp_ft_5.png" width="1800"//></p>
-<h2 id="task-2-hub-spoke-topologies">Task 2: Hub &amp; Spoke Topologies</h2>
+<h2 id="task-2-hub-spoke-topology">Task 2: Hub &amp; Spoke topology</h2>
 <p>In this section, you are going to use a centralized policy to build the hub &amp; spoke topology. This will include the hub on both DCs as well as RH.</p>
 <h4 id="step-21-pre-config-verifications"><strong>Step 2.1.</strong> Pre-config verifications</h4>
 <ul>
@@ -1062,23 +1062,23 @@
 <p><strong>Question: Did you notice the default route is learned from 1.1.30.1 which is the Regional Hub(RH)? Do you know why?</strong> </n></p>
 <p>To answer this question, we will check the route table at vSmart as all the routes are advertised by vSmart. SSH to vSmart and run <code>show omp route vpn 1 0.0.0.0/0 detail | t</code></p>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task2_Routes_2.png" width="1800"//></p>
-<p>OMP is very much like BGP when it comes down to route preference. In the order of preference, there is an origin-protocol, in this case the default route learned on RH is from Static (by design, in real deployment, it's probably going to be BGP as well); whereas the default learned from the DCs is from iBGP. The Origin protocol static route is more preferred than iBGP.</p>
-<p>Now, let's look at the specific routes learned from DC. Do <code>show sdwan omp route vpn 1 10.100.100.0/24</code> on <strong>R1-WE1</strong>.</p>
+<p>OMP is very much like BGP when it comes down to route preference. In the order of preference, there is an origin-protocol, in this case the default route learned on RH is from Static (by design, might be BGP in real deployment); whereas the default learned from the DCs is from iBGP. The Origin protocol static route is preferred over iBGP route.</p>
+<p>Now, let's look at the specific routes learned from DC. Run <code>show sdwan omp route vpn 1 10.100.100.0/24</code> on <strong>R1-WE1</strong>.</p>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task2_Routes_3.png" width="1800"//></p>
 <p><strong>Question: you will see 4 paths and one of the paths shows Inv,U. Hopefully you can answer why that is. But why are there 4 paths?</strong></p>
-<p>Let's SSH to <strong>vSmart</strong> and do <code>show omp route vpn 1 10.100.100.0/24 | t</code>.</p>
+<p>Let's SSH to <strong>vSmart</strong> and run <code>show omp route vpn 1 10.100.100.0/24 | t</code>.</p>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task2_Routes_4.png" width="1800"//></p>
 <p>You will see 12 ECMP routes marked as <strong>C,R</strong> (Chosen,Resolved). Why 12? This is because we have 4 DC wEdges each with 3 transports, so there are total of 12 paths. </n></p>
-<p>The next question will be why there are only 4 paths on the remote wEdges? This is because the ECMP settings on the wEdge by default are set to 4. If you change it to the current maximum of 16, you will see all 12 paths.(It will be increased to a maximum of 128 in a future release) </n></p>
-<p><span style="background-color:lightblue"> <strong>Note: vSmart randomly selects 4 paths (or the max ECMP value is set to) and installs them on the device. This may pose problem in a large deployment where multiple paths is more than 16.</strong></p>
-<p>In this exercise we will keep the default ECMP setting and solve this issue with a centralized policy.</p>
+<p>The next question will be why there are only 4 paths on the remote wEdges? This is because the ECMP settings on the wEdge by default are set to 4. If you change it to the current maximum of 16, you will see all 12 paths.</n></p>
+<p><span style="background-color:lightblue"> <strong>Note: vSmart randomly selects 4 paths (or the max ECMP value is set to) and installs them on the device. This may pose problem in a large deployment where number of paths is more than 16.</strong></p>
+<p>In this task we will keep the default ECMP setting and solve this issue with a centralized policy.</p>
 <h4 id="step-22-create-a-topology-for-centralized-policy"><strong>Step 2.2.</strong> Create a topology for centralized policy</h4>
 <ul>
 <li>
-<p>SSH to R1-WE1 &amp; R2-WE1 and run <code>show sdwan bfd sessions</code>command and verify bfd tunnels between R1-WE1 and R2-WE1</p>
+<p>SSH to R1-WE1 &amp; R2-WE1; run <code>show sdwan bfd sessions</code>command and verify bfd tunnels between R1-WE1 and R2-WE1</p>
 </li>
 <li>
-<p>Login to vManage <strong>198.18.133.200</strong> and access policy configuration from <strong>Configuration - Policies</strong></p>
+<p>Login to vManage <strong>https://198.18.133.200:8443</strong> and access policy configuration from <strong>Configuration - Policies</strong></p>
 </li>
 <li>
 <p>Click the <strong>Custom Options</strong> drop down on the top right and select <strong>Topology</strong> under <strong>Centralized Policy</strong></p>
@@ -1137,7 +1137,7 @@
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task2_topo_5.png" width="1800"//></p>
 <h4 id="step-23-apply-the-topology-policy-to-centralized-policy"><strong>Step 2.3.</strong> Apply the topology policy to Centralized Policy</h4>
 <ul>
-<li>Login to vManage <strong>198.18.133.200</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
+<li>Login to vManage <strong>https://198.18.133.200:8443</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
 <li>Click <strong>Add Policy</strong> under <strong>Centralized Policy</strong></li>
 <li>Click next, you will see Configure Topology and VPN membership - Click <strong>Add topology</strong>, and select <strong>Import Existing Topology</strong></li>
 <li>Click <strong>Custom Control(Route and TLOC)</strong>, then select <strong>LAB_Topo_RS1</strong></li>
@@ -1159,7 +1159,7 @@ then click Save Policy</li>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task2_topo_8.png" width="1800"//></p>
 <h4 id="step-24-activate-the-first-centralized-policy"><strong>Step 2.4.</strong> Activate the first Centralized Policy</h4>
 <ul>
-<li>Login to vManage <strong>198.18.133.200</strong> and access policy configuration from <strong>Configuration - Policies - Centralized Policy</strong></li>
+<li>Login to vManage <strong>https://198.18.133.200:8443</strong> and access policy configuration from <strong>Configuration - Policies - Centralized Policy</strong></li>
 <li>Locate policy <strong>LAB_Centeral_v01</strong> you have created in previous step. Click <strong>...</strong> for more options and select <strong>Activate</strong>. The policy will be pushed to the vSmarts.</li>
 </ul>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task2_topo_9.png" width="1800"//></p>
@@ -1178,7 +1178,7 @@ then click Save Policy</li>
 </ul>
 <p><span style="background-color:lightblue"> <strong>Note: In production network, it is always recommended to create a new version when you update your policy. So that you can also change to the previous version as a fallback plan.</strong></p>
 <ul>
-<li>Login to vManage <strong>198.18.133.200</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
+<li>Login to vManage <strong>https://198.18.133.200:8443</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
 <li>Click the <strong>Custom Options</strong> drop down on the top right and select <strong>Topology</strong> under <strong>Centralized Policy</strong></li>
 <li>Locate policy <strong>LAB_Topo_RS1</strong>, click <strong>...</strong> and select <strong>Copy</strong>.</li>
 </ul>
@@ -1211,7 +1211,7 @@ then click Save Policy</li>
 <h4 id="step-33-apply-the-policy"><strong>Step 3.3.</strong> Apply the policy</h4>
 <ul>
 <li>
-<p>Login to vManage <strong>198.18.133.200</strong> and access policy configuration from <strong>Configuration - Policies</strong></p>
+<p>Login to vManage <strong>https://198.18.133.200:8443</strong> and access policy configuration from <strong>Configuration - Policies</strong></p>
 </li>
 <li>
 <p>Locate centralized policy <strong>LAB_Central_v01</strong>, click <strong>...</strong> and select <strong>Edit</strong></p>
@@ -1247,7 +1247,7 @@ then click Save Policy</li>
 <p><span style="background-color:lightblue"> <strong>Note: Using vSmart inbound policy may not be an ideal solution for all scenarios. It is recommended to use outbound policy, because it is simple and maintains full visibility of vSmart. vSmart inbound policy can be considered only if outbound policy can NOT meet the requirements.</strong></p>
 <h4 id="step-35-create-new-topology"><strong>Step 3.5.</strong> Create new topology</h4>
 <ul>
-<li>Login to vManage <strong>198.18.133.200</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
+<li>Login to vManage <strong>https://198.18.133.200:8443</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
 <li>Click <strong>Custom Options</strong> on the upper right corner and select <strong>Topology</strong> under <strong>Centralized Policy</strong>.</li>
 <li>Click <strong>Add Topology</strong> and select <strong>Custom Control(Route&amp;TLOC)</strong></li>
 <li>Configure the new policy with following setting<ul>
@@ -1282,7 +1282,7 @@ then click Save Policy</li>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task3_routes_9.png" width="1800"//></p>
 <ul>
 <li>Apply this new topology to the current policy.</li>
-<li>Login to vManage <strong>198.18.133.200</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
+<li>Login to vManage <strong>https://198.18.133.200:8443</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
 <li>Locate <strong>LAB_Central_v01</strong> under Centralized Policy and select <strong>Edit</strong></li>
 <li>Click Topology tab and click <strong>Add Topology</strong></li>
 <li>Select <strong>Import Existing Topology</strong> and select <strong>Custom Control( Route and TLOC)</strong> Policy Type then select <strong>default_route_from_DC</strong> from drop down; click Import.</li>
@@ -1307,7 +1307,7 @@ then click Save Policy</li>
 <p><strong>Well done! You have finished the default route handling task for R1-WE1.Let's configure the same policy for R2-WE1.</strong></p>
 <h4 id="step-37-create-topology-policy-for-remote2"><strong>Step 3.7.</strong> Create topology policy for Remote2</h4>
 <ul>
-<li>Login to vManage <strong>198.18.133.200</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
+<li>Login to vManage <strong>https://198.18.133.200:8443</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
 <li>Click <strong>Custom Options</strong> on the upper right corner and select <strong>Topology</strong> under <strong>Centralized Policy</strong>.</li>
 <li>Locate <strong>LAB_Topo_RS1_V02</strong> click <strong>...</strong> select copy and change Name and Description to <strong>LAB_Topo_RS2_v02</strong> then click Copy.</li>
 </ul>
@@ -1357,7 +1357,7 @@ then click Save Policy</li>
 <p>The specific routes from DC1 are tagged with 1000; DC2 are tagged with 2000 in previous task. In this section, you are going to create different policies for BU1 and BU2 sites and set different OMP preference based on OMP tag.</p>
 <h4 id="step-41-modify-topology-policy-for-remote1">Step 4.1: Modify Topology policy for remote1</h4>
 <ul>
-<li>Login to vManage <strong>198.18.133.200</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
+<li>Login to vManage <strong>https://198.18.133.200:8443</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
 <li>Click <strong>Custom Options</strong> on the upper right corner and select <strong>Topology</strong> under <strong>Centralized Policy</strong>.</li>
 <li>Locate topology <strong>LAB_Topo_RS1_V02</strong>. click <strong>...</strong> and select <strong>Edit</strong></li>
 <li>Select <strong>Route</strong> under <strong>Sequence Type</strong>, you are going to add four more rules.</li>
@@ -1441,7 +1441,7 @@ You will see route 10.100.100.0/24 is learned from 1.1.10.1, and route 10.200.20
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task4_routes_6.png" width="1800"//></p>
 <h4 id="step-44-modify-topology-policy-for-remote2">Step 4.4: Modify Topology policy for remote2</h4>
 <ul>
-<li>Login to vManage <strong>198.18.133.200</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
+<li>Login to vManage <strong>https://198.18.133.200:8443</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
 <li>Click <strong>Custom Options</strong> on the upper right corner and select <strong>Topology</strong> under <strong>Centralized Policy</strong>.</li>
 <li>locate topology <strong>LAB_Topo_RS2_V02</strong>. click <strong>...</strong> and select <strong>Edit</strong></li>
 <li>Select <strong>Route</strong> under <strong>Sequence Type</strong>. Here you are going to add four more rules.</li>
@@ -1577,7 +1577,7 @@ You will see route 10.100.100.0/24 is learned from 1.1.10.1, and route 10.200.20
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task5_LTE_5.png" width="1800"//></p>
 <h4 id="step-53-configure-sla-classes-for-app-aware-routing-aar">Step 5.3: Configure SLA classes for app aware routing (AAR)</h4>
 <ul>
-<li>Login to vManage <strong>198.18.133.200</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
+<li>Login to vManage <strong>https://198.18.133.200:8443</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
 <li>Click <strong>Custom Options</strong> drop down on the top right and select <strong>Lists</strong> under <strong>Centralized Policy</strong></li>
 </ul>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task5_AAR_1.png" width="1800"//></p>
@@ -1643,7 +1643,7 @@ You will see route 10.100.100.0/24 is learned from 1.1.10.1, and route 10.200.20
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task5_AAR_9.png" width="1800"//></p>
 <h4 id="step-55-lab-verification">Step 5.5: Lab Verification</h4>
 <ul>
-<li>Login to vManage <strong>198.18.133.200</strong> and select <strong>Monitor - Network</strong> from the left panel</li>
+<li>Login to vManage <strong>https://198.18.133.200:8443</strong> and select <strong>Monitor - Network</strong> from the left panel</li>
 <li>Click <strong>RH-WE1</strong> to bring up the device monitor page, and select <strong>Troubleshooting</strong> from the panel on the left</li>
 <li>Select <strong>Simulate Flows</strong> tool under <strong>Traffic</strong> and use the following value for simulated flow<ul>
 <li>VPN: <strong>VPN-1</strong></li>
@@ -1677,7 +1677,7 @@ You will see route 10.100.100.0/24 is learned from 1.1.10.1, and route 10.200.20
 <p>Now let's verify it again.</p>
 </li>
 <li>
-<p>Login to vManage <strong>198.18.133.200</strong> and select <strong>Monitor - Network</strong></p>
+<p>Login to vManage <strong>https://198.18.133.200:8443</strong> and select <strong>Monitor - Network</strong></p>
 </li>
 <li>Click <strong>RH-WE1</strong> to bring up device monitor page, and select <strong>Troubleshooting</strong> from the panel on the left</li>
 <li>Select <strong>Simulate Flows</strong> tool under <strong>Traffic</strong> and use the following value for simulated flow<ul>
@@ -1708,7 +1708,7 @@ You will see route 10.100.100.0/24 is learned from 1.1.10.1, and route 10.200.20
 <p>Now let's verify it again.</p>
 </li>
 <li>
-<p>Login to vManage <strong>198.18.133.200</strong> and select <strong>Monitor - Network</strong></p>
+<p>Login to vManage <strong>https://198.18.133.200:8443</strong> and select <strong>Monitor - Network</strong></p>
 </li>
 <li>Click <strong>RH-WE1</strong> to bring up the device monitor page, and select <strong>Troubleshooting</strong> from the panel on the left</li>
 <li>Select <strong>Simulate Flows</strong> tool under <strong>Traffic</strong> and use the following value for simulated flow<ul>
