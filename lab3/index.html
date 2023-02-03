@@ -1468,17 +1468,15 @@ R1-WE1#
 <h2 id="task-5-dia">Task 5: DIA</h2>
 <p>There are two options to enable DIA.</p>
 <ul>
-<li>
-<p>Option 1: NAT DIA Route
-</n>
-  In this option, a NAT route is configured under service VPN. You can direct local internet traffic from service VPN to transport VPN.</p>
-</li>
-<li>
-<p>Option 2: Centralized data policy
-  </n>
-  In this option, a centralized policy is applied to service side traffic based on ip prefixes, a match will redirect to transport VPN. Traffic that doesnt match the policy will stay in service VPN and route over IPSec tunnel.</p>
-</li>
+<li>Option 1: <strong>NAT DIA Route</strong></li>
 </ul>
+<p></n>
+  In this option, a NAT route is configured under service VPN. You can direct local internet traffic from service VPN to transport VPN.</p>
+<ul>
+<li>Option 2: <strong>Centralized data policy</strong></li>
+</ul>
+<p></n>
+  In this option, a centralized policy is applied to service side traffic based on ip prefixes, a match will redirect to transport VPN. Traffic that doesnt match the policy will stay in service VPN and route over IPSec tunnel.</p>
 <p>In this task, you are going to configure DIA on remote sites using option 1.</p>
 <h4 id="step-51-verify-route-to-internet">Step 5.1: verify route to internet</h4>
 <ul>
