@@ -443,7 +443,7 @@
 <li>Run <code>route</code> command to verify <strong>default</strong> route is pointing to eth0 interface as shown below.</li>
 </ul>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab2_1_0.PNG" width="1800"/></p>
-<p><strong>Note</strong> If default route is missing on the VM, please run command <code>sudo route add default gw 10.10.101.1 eth0</code> or <code>sudo route add default gw 10.10.102.1 eth0</code> to add default route.  </p>
+<p><strong>Note</strong> If default route is missing on the VM, please run command <code>sudo route add default gw 10.10.101.1 eth0</code> or <code>sudo route add default gw 10.10.102.1 eth0</code> to add default route for R1-VM1 or R2-VM1.  </p>
 <ul>
 <li>Run <code>traceroute 10.11.1.1</code> from both hosts as show in below screenshots</li>
 </ul>
@@ -453,7 +453,7 @@
 <h2 id="step2-route-policy-for-remote2">Step2: Route policy for Remote2</h2>
 <p>The requirement for remote2 is to use DC as transit site and use transport <strong>private2</strong>. To achieve that, you can modify the central policy created in <strong>lab1</strong> to set higher OMP preference for prefix <strong>10.11.1.0/24</strong> from color <strong>private2</strong>.</p>
 <ul>
-<li>Login to vManage <strong>198.18.133.200</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
+<li>log in to vManage <strong>https://198.18.133.200:8443</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
 <li>Click <strong>Custom Options</strong> on the upper right corner and select <strong>Lists</strong> under <strong>Centralized Policy</strong> as show below.</li>
 </ul>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab2_2_1.PNG" width="1800"/></p>
@@ -485,7 +485,7 @@
 <p>The requirement for remote1 is to use <strong>private1</strong> route directly to legacy site. To achieve that, you can leak prefix <strong>10.11.1.0/24</strong> from VPN0 into service VPN.</p>
 <p>SP <strong>private1</strong> uses OSPF as PE-CE routing protocol; create OSPF feature template and attach to R1-WE1 VPN0.</p>
 <ul>
-<li>Login to vManage <strong>198.18.133.200</strong> and access feature template from <strong>Configuration - Template</strong> then click <strong>Feature</strong></li>
+<li>log in to vManage <strong>https://198.18.133.200:8443</strong> and access feature template from <strong>Configuration - Template</strong> then click <strong>Feature</strong></li>
 <li>Click <strong>Add Template</strong>, pick <strong>CSR1000v</strong> under <strong>Select Devices</strong> and select Cisco OSPF template as show below.</li>
 </ul>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab2_3_1.PNG" width="1800"/></p>
@@ -502,7 +502,7 @@
 <li>Enable OSPF <strong>Area 0</strong> on interface GigabitEthernet1</li>
 </ul>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab2_3_3.PNG" width="1800"/>  </p>
-<p><strong>Note: Please make sure remove "/" from interface dropdown list, so the interface name matches GigabitEthernet1</strong></p>
+<p><span style="background-color:lightblue"> <span style="background-color:lightblue"> <strong>Note: Please make sure remove "/" from interface dropdown list, so the interface name matches GigabitEthernet1</strong> </span></p>
 <ul>
 <li>
 <p>Save the OSPF feature template</p>
@@ -524,7 +524,7 @@
 </ul>
 <p>Configure route leaking between VPN0 and service VPN, so R1-WE1 will use the OSPF route learned from VPN0 for prefix <strong>10.11.1.0/24</strong></p>
 <ul>
-<li>Login to vManage <strong>198.18.133.200</strong> and access feature template from <strong>Configuration - Template</strong> then click <strong>Feature</strong></li>
+<li>log in to vManage <strong>https://198.18.133.200:8443</strong> and access feature template from <strong>Configuration - Template</strong> then click <strong>Feature</strong></li>
 <li>Locate existing template <strong>"Lab_Remote_VPN1_V01"</strong>. Click <strong>"..."</strong> for more option and select Edit.<ul>
 <li>Move to <strong>Global Route Leak</strong> section. Add OSPF under <strong>Add New Route Leak from Global VPN to Service VPN</strong> </n></li>
 <li>Add connected under <strong>Add New Route Leak from Service VPN to Global VPN</strong> </n>
@@ -533,7 +533,7 @@
 </ul>
 </li>
 </ul>
-<p><span style="background-color:lightblue"> <strong>Note: You can also add route policy to limit the routes being leaked between Global and service VPN</strong></p>
+<p><span style="background-color:lightblue"> <span style="background-color:lightblue"> <strong>Note: You can also add route policy to limit the routes being leaked between Global and service VPN</strong> </span></p>
 <ul>
 <li>SSH into R1-WE1 to verify route <strong>10.10.101.0/24</strong>being added in global route table</li>
 </ul>
