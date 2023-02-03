@@ -1496,7 +1496,7 @@ You will see route 10.100.100.0/24 is learned from 1.1.10.1, and route 10.200.20
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task4_routes_9.png" width="1800"//></p>
 <h4 id="this-concludes-the-routing-handling-for-the-specific-routes">This concludes the routing handling for the specific routes.</h4>
 <h2 id="task-5-application-aware-routing">Task 5: Application Aware Routing</h2>
-<p>ACME wants to provide the best user experience for their transactional data which has to meet the below SLA requirement ( we will use SSH to simulate this). ACME would also like to use private 1 as the preferred link, if private 1 doesn't meet the SLA requirement, it will use private 2 when private 2 still meets the SLA. The LTE link will only be used when both private 1 and private 2 go down. ACME has the following SLA requirements for their applications.</p>
+<p>ACME wants to provide the best user experience for their transactional data which has to meet the below SLA requirement ( we will use SSH to simulate this). ACME would also like to use private 1 as the preferred link, if private 1 doesn't meet the SLA requirement, it will use private 2. The LTE link will only be used when both private 1 and private 2 are down. ACME has the following SLA requirements for their applications.</p>
 <table>
 <thead>
 <tr>
@@ -1533,9 +1533,9 @@ You will see route 10.100.100.0/24 is learned from 1.1.10.1, and route 10.200.20
 </tr>
 </tbody>
 </table>
-<p>Solution: Application Aware Routing (AAR) is one of the differentiator between SDWAN and traditional WAN technology where you can route traffic based upon an application's SLA. You can classify an application based upon traditional 5 tuples or even application's DPI(Deep Packet Inspection). There three action keyword for the selected application. Prefer; backup and strict. The key to remember is AAR is all about SLA.</p>
+<p>Solution: Application Aware Routing (AAR) is one of the differentiator between SDWAN and traditional WAN technology where you can route traffic based upon an application's SLA. You can classify an application based on traditional 5 tuples or application's DPI(Deep Packet Inspection). There are three action keyword for the selected application: Prefer; backup and strict. The key to remember for AAR is all about SLA.</p>
 <p>Prefer means when the preferred color/s meets the SLA, this/these colors will be preferred. If all the preferred colors don't meet the SLA, then depending on if you have backup or strict configuration, these two options are mutual exclusive.</p>
-<p>If the backup color is configured which means when preferred color doesn't meet SLA, it will first use all other colors that meet the SLA regardless if that color is configured as backup or not (as long as the color meets the SLA). If there are multiple such colors, it will perform load sharing among them. If none of the colors meet the SLAs, it will use the configured backup color.</p>
+<p>If the backup color is configured which means when preferred color doesn't meet SLA, it will first use all other colors that meet the SLA regardless that color is configured as backup or not (as long as the color meets the SLA). If there are multiple such colors, it will perform load sharing among them. If none of the colors meet the SLAs, it will use the configured backup color.</p>
 <p>If strict is configured (note: strict and backup are mutual exclusive ), the matching traffic will be dropped when the preferred color is not configured.</p>
 <p>Based upon the requirements, we will do the following: first configure LTE as the last resort which means it won't come up until all other circuits are not available. Then we will configure private1 as preferred color, and we simply don't need to mention private2 (because if private2 meets the SLA it will be used anyway). If private2 doesn't meet SLA, since neither strict nor backup is configured, it will simply use any available tunnels that are left.</p>
 <h4 id="step-51-configure-the-rh-lte-interface-be-used-only-when-all-other-circuits-are-unavailable">Step 5.1: Configure the RH LTE interface be used only when all other circuits are unavailable.</h4>
@@ -1652,10 +1652,10 @@ You will see route 10.100.100.0/24 is learned from 1.1.10.1, and route 10.200.20
 </li>
 <li>Click <strong>Simulate</strong></li>
 </ul>
-<p>You should see the traffic is only taking the private1 path which means it's using private1 as the preferred transport.</p>
+<p>You should see the flow is only taking the private1 path which means it's using private1 as the preferred transport.</p>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task5_AAR_10.png" width="1800"//></p>
 <p>Do another simulation, this time change the destination port to 23, everything else remains the same.</p>
-<p>You should see the traffic will use both <strong>private1</strong> and <strong>private2</strong> which means it uses all available circuits for all other traffic.
+<p>You should see the flow uses both <strong>private1</strong> and <strong>private2</strong> which means it uses all available circuits for all other traffic.
 <img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task5_AAR_11.png" width="1800"//></p>
 <ul>
 <li>Now let's shutdown the private1 interface of the RH-WE1 and verify again.</li>
@@ -1687,7 +1687,7 @@ You will see route 10.100.100.0/24 is learned from 1.1.10.1, and route 10.200.20
 </li>
 <li>Click <strong>Simulate</strong></li>
 </ul>
-<p>You should see that traffic is only taking the private2 path now as this is the only color available.</p>
+<p>You should see that the flow is only taking the private2 path now as this is the only available color.</p>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task5_AAR_13.png" width="1800"//></p>
 <ul>
 <li>Let's shutdown private2 interface and verify again</li>
@@ -1718,7 +1718,7 @@ You will see route 10.100.100.0/24 is learned from 1.1.10.1, and route 10.200.20
 </li>
 <li>Click <strong>Simulate</strong></li>
 </ul>
-<p>You should see the traffic is taking LTE interface only.
+<p>You should see the flow is taking LTE interface only.
 <img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task5_AAR_14.png" width="1800"//></p>
 <p><strong>Great! You've completed lab1. Before you proceed to next lab, let's no shutdown private1 and private2 interfaces, and disable LTE last-resort by changing the device value of RH-WE1's device template.</strong></p>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task5_AAR_15.png" width="1800"//></p>
