@@ -488,18 +488,12 @@
     Step 4.5: Verification
   </a>
   
-    <nav class="md-nav" aria-label="Step 4.5: Verification">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#this-concludes-the-routing-handling-for-the-specific-routes" class="md-nav__link">
     This concludes the routing handling for the specific routes.
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -831,18 +825,12 @@
     Step 4.5: Verification
   </a>
   
-    <nav class="md-nav" aria-label="Step 4.5: Verification">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#this-concludes-the-routing-handling-for-the-specific-routes" class="md-nav__link">
     This concludes the routing handling for the specific routes.
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1198,13 +1186,13 @@ then click Save Policy</li>
 <li>Click the <strong>Custom Options</strong> drop down on the top right and select <strong>Topology</strong> under <strong>Centralized Policy</strong></li>
 <li>Locate <strong>LAB_Topo_RS1_V02</strong> and click <strong>...</strong> select <strong>Edit</strong></li>
 </ul>
-<p><span style="background-color:lightblue"> <strong>Note: there is one existing accept all rule; you don't need to change the accept all rule but you do need make sure the new rules are placed ahead of this accept all rule.</strong></p>
+<p><span style="background-color:lightblue"> <strong>Note: There is one existing accept all rule; you don't need to change the accept all rule but you do need make sure the new rules are placed ahead of this accept all rule.</strong></p>
 <ul>
 <li>For <strong>Sequence Type</strong> Route rule, you are going to add four new rules<ul>
-<li>Rule1: match <strong>Prefix List</strong> default &amp; <strong>originator</strong> of 1.1.10.1(DC1-WE1) then accept and set preference of 100</li>
-<li>Rule2: match default &amp; originator of 1.1.20.1(DC2-WE1) then accept and set preference of 100</li>
-<li>Rule3: match default &amp; site-list <strong>RH</strong> then <strong>accept</strong></li>
-<li>Rule4: match default and then <strong>reject</strong></li>
+<li>Rule1: match <strong>Prefix List</strong> default &amp; <strong>originator</strong> of 1.1.10.1(DC1-WE1) then accept and set <strong>preference</strong> of 100</li>
+<li>Rule2: match <strong>Prefix List</strong> default &amp; <strong>originator</strong> of 1.1.20.1(DC2-WE1) then accept and set <strong>preference</strong> of 100</li>
+<li>Rule3: match <strong>Prefix List</strong> default &amp; <strong>site-list</strong> RH then <strong>accept</strong></li>
+<li>Rule4: match <strong>Prefix List</strong> default and then <strong>reject</strong></li>
 </ul>
 </li>
 <li>Drag &amp; drop the newly created rules to move it ahead of the previous accept all rule.</li>
@@ -1248,8 +1236,8 @@ then click Save Policy</li>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task3_routes_7.png" width="1800"//></p>
 <p>Let's check omp route table on the vSmart, SSH to vSmart and run <code>show omp route | t</code>. </n></p>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task3_routes_8.png" width="1800"//></p>
-<p>As you recall, the OMP routes don't have any changes either where 3 paths learned from RH are marked with C,R due to routes being originated from Static which are preferred over originated from iBGP. But why doesn't the outbound policy that is setting the routes originated from DC1-WE1 and DC2-WE1 work? <strong>This is because by default the outbound policy will only apply to the routes with "C,R", the routes without "C,R" are not applicable</strong>. So the routes from DCs are not even going through the outbound policies. There are multiple ways to change this default behavior such as using inbound policy or configure send-backup path, or make every route with C.R. In this lab, we are going to use inbound policy to influence the route.</p>
-<p>Let's configure an vSmart <strong>inbound policy</strong> to make the default routes learned from DCs have a higher OMP preference than RH's.</p>
+<p>As you can see, the OMP routes don't have any changes; 3 paths learned from RH are marked with C,R due to routes being originated from Static which are preferred over originated from iBGP. Question is why doesn't the outbound policy that is setting the routes originated from DC1-WE1 and DC2-WE1 have any effect? <strong>This is because by default the outbound policy will only apply to the routes with "C,R", the routes without "C,R" are not applicable</strong>. So the routes from DCs are not even going through the outbound policies. There are multiple ways to change this default behavior such as using inbound policy or configure send-backup path, or make every route with C.R. In this lab, we are going to use inbound policy to influence the route.</p>
+<p>Let's configure a vSmart <strong>inbound policy</strong> to make the default routes learned from DCs having a higher OMP preference than RH's.</p>
 <p><span style="background-color:lightblue"> <strong>Note: Using vSmart inbound policy may not be an ideal solution for all scenarios. It is recommended to use outbound policy, because it is simple and maintains full visibility of vSmart. vSmart inbound policy can be considered only if outbound policy can NOT meet the requirements.</strong></p>
 <h4 id="step-35-create-new-topology"><strong>Step 3.5.</strong> Create new topology</h4>
 <ul>
@@ -1310,7 +1298,7 @@ then click Save Policy</li>
 <li>SSH to <strong>R1-WE1</strong> and do <code>show sdwan omp route vpn 1</code>. You will see 4 paths from DCs with preference 100. Remember the vSmart outbound policy we assign preference of 100 where the inbound policy we assign preference of 50 so that we can differentiate which policy is taking effect.</li>
 </ul>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task3_routes_13.png" width="1800"//></p>
-<p><strong>Well done! You have finished the default route handling task for R1-WE1.Let's configure the same policy for R2-WE1.</strong></p>
+<p>Well done! You have finished the default route handling task for R1-WE1.<strong>Let's configure the same policy for R2-WE1.</strong></p>
 <h4 id="step-37-create-topology-policy-for-remote2"><strong>Step 3.7.</strong> Create topology policy for Remote2</h4>
 <ul>
 <li>log in to vManage <strong>https://198.18.133.200:8443</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
@@ -1360,7 +1348,7 @@ then click Save Policy</li>
 <h2 id="task-4-specific-routes-handling">Task 4: Specific Routes handling</h2>
 <p>ACME wants to prefer more specific routes originated from its DC and use the other DC as backup. For BU1 (R1-WE1), it only needs to learn the routes from BU1's Headend devices (DC1-WE1 and DC2-WE1); for BU2(R2-WE1), it onlys need to learn the routes from BU2's Headend devices.(DC1-WE2 and DC2-WE2).
 </n></p>
-<p>The specific routes from DC1 are tagged with 1000; DC2 are tagged with 2000 in previous task. In this section, you are going to create different policies for BU1 and BU2 sites and set different OMP preference based on OMP tag.</p>
+<p>The specific routes from DC1 are tagged with 1000, and DC2 are tagged with 2000 in previous task. In this section, you are going to create different policies for BU1 and BU2 sites and set different OMP preference based on OMP tag.</p>
 <h4 id="step-41-modify-topology-policy-for-remote1">Step 4.1: Modify Topology policy for remote1</h4>
 <ul>
 <li>log in to vManage <strong>https://198.18.133.200:8443</strong> and access policy configuration from <strong>Configuration - Policies</strong></li>
@@ -1397,11 +1385,11 @@ then click Save Policy</li>
 </li>
 <li>Drag and Drop to move up the newly created rules above the <strong>accept all</strong> rule. (if you followed the previously task, the new rules should be No. 5, 6,7 and 8, and the match all rule should be rule No. 9)</li>
 </ul>
-<p><span style="background-color:lightblue"> <strong>Note: vSmart does the lookup based upon the order from top down, When a match is found, it will use that rule and stop processing the sequence(it will not longer look for subsequent rules).</strong></p>
+<p><span style="background-color:lightblue"> <strong>Note: vSmart does the lookup based upon the order from top down; when a match is found, it will use that rule and stop processing the sequence(it will not longer look for subsequent rules).</strong></p>
 <ul>
 <li>Click <strong>Save policy</strong> to Activate. This will make the vSmart to push the policy immediately after you confirm configuring devices</li>
 </ul>
-<p><strong>This is expected, creating a new policy is a best practice. Otherwise updating the existing active policy will cause an immediate policy push.</strong></p>
+<p><strong>This is expected; creating a new policy is a best practice. Otherwise updating the existing active policy will cause an immediate policy push.</strong></p>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task4_routes_1.png" width="1800"//></p>
 <ul>
 <li>To verify, SSH to <strong>R1-WE1</strong> and run <code>show sdwan omp route vpn 1</code></li>
@@ -1436,7 +1424,7 @@ then click Save Policy</li>
 <p>SSH to <strong>R1-WE1</strong> and run <code>show sdwan omp route vpn 1</code></p>
 </li>
 <li>
-<p>You should see each route for (10.100.100.0/24 and 10.200.200.0/24) will have 12 paths and 3 paths from the preferred DC with preference of 100, 3 paths from secondary DC with preference of 50, another 6 paths from are invalid from other BU hub devices.</p>
+<p>You should see each route (10.100.100.0/24 and 10.200.200.0/24) has 12 paths with 3 paths from the preferred DC with preference of 100, 3 paths from secondary DC with preference of 50, another 6 paths are invalid from other BU hub devices.</p>
 </li>
 </ul>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task4_routes_5.png" width="1800"//></p>
@@ -1493,7 +1481,7 @@ You will see route 10.100.100.0/24 is learned from 1.1.10.1, and route 10.200.20
 <p>SSH to <strong>R2-WE1</strong> and run <code>show sdwan omp route vpn 1</code></p>
 </li>
 <li>
-<p>Here you can see each route (10.100.100.0/24 and 10.200.200.0/24) will have 12 paths - however 3 paths from the preferred DC have a preference of 100, 3 paths from the secondary DC have a preference of 50, and another 6 paths from are invalid from other BU hub devices.</p>
+<p>You should see each route (10.100.100.0/24 and 10.200.200.0/24) has 12 paths, with 3 paths from the preferred DC have preference of 100, 3 paths from the secondary DC have preference of 50, and another 6 paths from are invalid from other BU hub devices.</p>
 </li>
 </ul>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task4_routes_8.png" width="1800"//></p>
@@ -1502,11 +1490,11 @@ You will see route 10.100.100.0/24 is learned from 1.1.10.1, and route 10.200.20
 <p>Run <code>show ip route vrf 1</code></p>
 </li>
 <li>
-<p>Here you will see 10.100.100.0/24 is learned from 1.1.10.2; 10.200.200.0/24 is learned from 1.1.20.2 which is desired.</p>
+<p>You should see 10.100.100.0/24 is learned from 1.1.10.2; 10.200.200.0/24 is learned from 1.1.20.2 which is desired.</p>
 </li>
 </ul>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab_task4_routes_9.png" width="1800"//></p>
-<h6 id="this-concludes-the-routing-handling-for-the-specific-routes"><strong>This concludes the routing handling for the specific routes.</strong></h6>
+<h4 id="this-concludes-the-routing-handling-for-the-specific-routes"><strong>This concludes the routing handling for the specific routes.</strong></h4>
 <h2 id="task-5-application-aware-routing">Task 5: Application Aware Routing</h2>
 <p>ACME wants to provide the best user experience for their transactional data which has to meet the below SLA requirement ( we will use SSH to simulate this). ACME would also like to use private 1 as the preferred link, if private 1 doesn't meet the SLA requirement, it will use private 2 when private 2 still meets the SLA. The LTE link will only be used when both private 1 and private 2 go down. ACME has the following SLA requirements for their applications.</p>
 <table>
