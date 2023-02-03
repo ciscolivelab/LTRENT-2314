@@ -442,7 +442,7 @@
 <ul>
 <li>Run <code>route</code> command to verify <strong>default</strong> route is pointing to eth0 interface as shown below.</li>
 </ul>
-<p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab2_1_0b.PNG" width="1800"/></p>
+<p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab2_1_0.PNG" width="1800"/></p>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab2_1_0a.PNG" width="1800"/></p>
 <p><strong>Note</strong> If default route is missing on the VM, please run command <code>sudo route add default gw 10.10.101.1 eth0</code> or <code>sudo route add default gw 10.10.102.1 eth0</code> to add default route for R1-VM1 or R2-VM1.  </p>
 <ul>
@@ -479,9 +479,9 @@
 </ul>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab2_2_5a.PNG" width="1800"/></p>
 <ul>
-<li>Run <code>traceroute 10.11.1.1</code> again from Remote2 host and compare the path from previous output.
-<span style="background-color:lightblue"> <span style="background-color:lightblue"> <strong>Note: a clear arp might be needed if your output doesn't match the screenshot below</strong> </span></li>
+<li>Run <code>traceroute 10.11.1.1</code> again from Remote2 host and compare the path from previous output.</li>
 </ul>
+<p><span style="background-color:lightblue"> <span style="background-color:lightblue"> <strong>Note: a clear arp might be needed if your output doesn't match the screenshot below</strong> </span></p>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab2_2_5.PNG" width="1800"/></p>
 <h2 id="step3-route-policy-for-remote1">Step3: Route policy for Remote1</h2>
 <p>The requirement for remote1 is to use <strong>private1</strong> route directly to legacy site. To achieve that, you can leak prefix <strong>10.11.1.0/24</strong> from VPN0 into service VPN.</p>
@@ -522,7 +522,7 @@
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab2_3_5.PNG" width="1800"/></p>
 <p><img src="https://ciscolivelab.github.io/LTRENT-2314/img/lab2_3_6.PNG" width="1800"/></p>
 <ul>
-<li>Repeat the above steps to add <strong>OSPF</strong> for template <strong>Lab_R2_V01</strong>. ( <strong>Note</strong> OSPF neighbor is not being configured for Remote2 in the lab)</li>
+<li>Remote1 and Remote2 share same VPN1 feature template; before change the VPN1 feature template on next step, you also need to add OSPF to Remote2. Repeat the above steps to add <strong>OSPF</strong> for template <strong>Lab_R2_V01</strong>. ( <strong>Note</strong> OSPF neighbor is not being configured for Remote2 in the lab)</li>
 </ul>
 <p>Configure route leaking between VPN0 and service VPN, so R1-WE1 will use the OSPF route learned from VPN0 for prefix <strong>10.11.1.0/24</strong></p>
 <ul>
